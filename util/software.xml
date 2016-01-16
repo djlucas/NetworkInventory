@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<check>
+ <software>
+  <!-- <search name="String" literal="Bool" expected_version="String" include="String" exclude="String" /> -->
+  <search name="Adobe Acrobat DC" literal="False" expected_version="15.006.30094" include="" exclude=""/>
+  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="15.009.20079" include="" exclude=""/>
+  <search name="Adobe Acrobat XI" literal="False" expected_version="11.0.13" include="" exclude="" />
+  <search name="Adobe Acrobat X" literal="False" expected_version="10.1.16" include="" exclude="XI" />
+  <search name="Adobe AIR" literal="False" expected_version="20.0.0.233" include="" exclude="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="20.0.0.270" include="ActiveX" exclude="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="20.0.0.267" include="NPAPI" exclude="" />
+  <!-- Catch all Adobe Reader (no version number) as it should be replaced by Acrobat Reader DC -->
+  <search name="Adobe Reader" literal="False" expected_version="" include="" exclude="" />
+  <search name="Shockwave" literal="False" expected_version="12.2.2.172" include="" exclude="" />
+  <search name="iTunes" literal="False" expected_version="12.3.2" include="" exclude="" />
+  <search name="QuickTime" literal="False" expected_version="7.78.80.95" include="" exclude="" />
+  <search name="CCleaner" literal="False" expected_version="5.13" include="" exclude="" />
+  <search name="CDBurnerXP" literal="False" expected_version="4.5.6.5931" include="" exclude="" />
+  <!-- Catch all CCCP (no version number) as it should be removed due to it being hopelessly out of date -->
+  <search name="Combined Community Codec Pack" literal="False" expected_version="" include="" exclude="" />
+  <search name="Citrix Receiver" literal="True" expected_version="4.4.0" include="" exclude="" />
+  <!-- Consumer versions of Chrome use Google Update version number...
+       ...We don't care! We want only corp version of Chrome so that it can be controlled via GPO -->
+  <search name="Google Chrome" literal="False" expected_version="47.0.2526.106" include="" exclude="" />
+  <search name="Google Earth" literal="False" expected_version="7.1.5.1557" include="" exclude="" />
+  <search name="GPL Ghostscript" literal="False" expected_version="9.18" include="" exclude="" />
+  <search name="K-Lite" literal="False" expected_version="11.8.2" include="" exclude="" />
+  <search name="Malwarebytes Anti-Malware" literal="False" expected_version="2.2.0.1024" include="" exclude="" />
+  <search name="Mozilla Firefox" literal="False" expected_version="43.0.3" include="" exclude="" />
+  <search name="Mozilla Thunderbird" literal="False" expected_version="38.5.0" include="" exclude="" />
+  <search name="Java" literal="False" expected_version="8.0.650.17" include="" exclude="Auto" />
+  <search name="ConnectWise Internet Client" literal="False" expected_version="15.5.0" include="" exclude="" />
+  <search name="Dell SonicWALL NetExtender" literal="False" expected_version="7.5.225" include="" exclude="" />
+  <search name="LabTech Client" literal="False" expected_version="10.0.0332" include="" exclude="" />
+ </software>
+ <updates>
+ <!-- Update checking is more for spot check rather than exhaustive search (though it could be used for that purpose)
+      I suggest using the list from the current month's Microsoft Security Bulletin Summary located at:
+	  https://technet.microsoft.com/en-us/library/security/
+	  OS API version list is available at: https://msdn.microsoft.com/en-us/library/windows/desktop/ms724832(v=vs.85).aspx
+	  For brievity, 6.0=Vista/2008 6.1=7/2008R2 6.2=8/2012 6.3=8.1/2012R2 10.0=10 10.1511=10-1511 release
+	  earlier versions are not supported, additionally,'F', 'C', 'R', and 'S' modifiers are for "Full", "Core", "RT", and "Server" versions (respectively)
+  <os_update kbid="#######" os="comma_delimited_OS_API_Versions" desc="Some description" vuln="MS15-xxx"/>
+  <office_update kbid="#######" ov="comma_delimited_Office_API_Versions" desc="Some description" vuln="MS15-xxx"/>
+  <software_update kbid="#######" sv="regex_for_string_value_name" desc="Some description" vuln="MS15-xxx" date="2015-12-08"/>
+  -->
+  <!-- KB3116180 -->
+  <os_update kbid="3104002" os="6.0F,6.0S,6.1F,6.1S,6.2F,6.2S,6.2R,6.3F,6.3S,6.3R" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
+  <os_update kbid="3116869" os="10.0F" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
+  <!-- KB3116184 -->
+  <os_update kbid="3116869" os="10.0F" desc="Cumulative Security Update for Microsoft Edge (KB3116184)" vuln="MS15-125" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Cumulative Security Update for Microsoft Edge (KB3116184)" vuln="MS15-125" date="2015-12-08"/>
+  <!-- KB3116178 -->
+  <os_update kbid="3105579" os="6.0S,6.0C,6.1S,6.1C,6.2S,6.2C" desc="Cumulative Security Update for JScript and VBScript to Address Remote Code Execution (KB3116178)" vuln="MS15-126" date="2015-12-08"/>
+  <os_update kbid="3105578" os="6.3C" desc="Cumulative Security Update for JScript and VBScript to Address Remote Code Execution (KB3116178)" vuln="MS15-126" date="2015-12-08"/>
+  <!-- KB3100465 -->
+  <os_update kbid="3100465" os="6.0S,6.0C,6.1S,6.1C,6.2S,6.2C,6.3S,6.3C" desc="Security Update for Microsoft Windows DNS to Address Remote Code Execution (KB3100465)" vuln="MS15-127" date="2015-12-08"/>
+  <!-- KB3104503 -->
+  <os_update kbid="3109094" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
+  <os_update kbid="3116869" os="10.0F" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
+  <!-- KB3106614 -->
+  <software_update kbid="3106614" sv="Silerlight.*5" desc="Security Update for Silverlight to Address Remote Code Execution (KB3106614)" vuln="MS15-129" date="2015-12-08"/>
+  <!-- KB3108670 -->
+  <os_update kbid="3108670" os="6.2F,6.2S,6.2C" desc="Security Update for Microsoft Uniscribe to Address Remote Code Execution (KB3108670)" vuln="MS15-130" date="2015-12-08"/>
+  <!-- KB3116111 -->
+  <office_update kbid="3085549" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114422" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114458" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3085528" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114403" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114415" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3101532" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114342" ov="15,15R" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114382" ov="16" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114457" ov="OCP" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114431" ov="OCP" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <office_update kbid="3114433" ov="EV" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
+  <!-- KB3116162 -->
+  <os_update kbid="3108371" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
+  <os_update kbid="3108381" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
+  <os_update kbid="3108347" os="6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
+  <os_update kbid="3116869" os="10.0F" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
+  <!-- KB3116130 -->
+  <os_update kbid="3109103" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
+  <os_update kbid="3116869" os="10.0F" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
+  <!-- KB3108669 -->
+  <software_update kbid="3108669" sv="Windows Media Center" desc="Security Update for Windows Media Center to Address Remote Code Execution (KB3108669)" vuln="MS15-134" date="2015-12-08"/>
+  <!-- KB3119075 -->
+  <os_update kbid="3109094" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
+  <os_update kbid="3116869" os="10.0F" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
+  <os_update kbid="3116900" os="10.1511" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
+ </updates>
+</check>
