@@ -17,8 +17,10 @@ End Sub
 forceCScriptExecution
 
 Dim objNetwork, objFSO, objShell, objDoInventory, objFile, objTextFile, objFileOpen, objFullScript, objNode, objNodeVals, objNodeOVers
+Dim objRootDSE, objCn, objCmd, objRes
 Dim strTarget, strReport, strUpdateReport, strTempFolder, strHtmlReport, strFullScript
 Dim strFullPath, strStylesheet, strLogo, strCl, strClH, strSoftwareList, strOpenFile, strAPIVer, strOSCaption, strOfficeVersion, strOSBuild
+Dim strRoot, strFilter, strAttributes, strScope, strTmp, strDescription, strDomainDesc
 Dim xmlDoc, xmlDocVals, colNodes, colNodesVals, colNodesReg, colNodesFeatures, colNodesPatches, colNodeOS, colNodesOSPatch, colNodesOfficePatch, colOVers
 Dim bPrintValues, bTestName, bTestVersion, bTestInclude, bTestExclude, bAvailable, bTestID, bTestOS, bHasGUITools, bHasGUI, bOSServer, bOSRT, bPostOSRelease
 Dim objRegExp
@@ -54,6 +56,40 @@ ElseIf WScript.Arguments.Count > 1 Then
 Else
     strTarget = WScript.Arguments.Item(0)
 End If
+
+
+' Get computer description from AD
+' https://social.technet.microsoft.com/Forums/scriptcenter/en-US/cb04f880-2b68-42fb-b9cb-747f5feddb80/script-to-grab-computer-ad-description-field?forum=ITCG
+' Just query the whole AD
+Set objRootDSE = GetObject("LDAP://RootDSE")
+strRoot = objRootDSE.Get("DefaultNamingContext")
+strfilter = "(&(objectCategory=Computer)(objectClass=Computer) (cn=" & strTarget & "))"
+strAttributes = "description"
+strScope = "subtree"
+Set objCn = CreateObject("ADODB.Connection")
+Set objCmd = CreateObject("ADODB.Command")
+
+objCn.Provider = "ADsDSOObject"
+objCn.Open "Active Directory Provider"
+objCmd.ActiveConnection = objCn
+objCmd.Properties("Page Size") = 1000
+objCmd.commandtext = "<LDAP://" & strRoot & ">;" & strFilter & ";" & strAttributes & ";" & strScope
+Set objRes = objCmd.Execute
+
+Do While Not objRes.EOF
+    strDescription = ""
+    If Not (IsNUll(objRes.Fields("description").Value)) Then
+        For Each strTmp in objRes.Fields("description").Value
+            strDescription = strTmp
+        Next
+    End If
+    strDomainDesc = strDescription
+    objRes.MoveNext
+Loop
+
+objRes.close
+ObjCn.close
+
 
 ' Get file paths
 strTempFolder = objFSO.GetSpecialFolder(2)
@@ -128,7 +164,7 @@ Sub DoSoftwareSearch
             End If
         End If
         If (bPrintValues) Then
-            strSoftwareList = strSoftwareList & "        " & objNode.Attributes.getNamedItem("productname").Text & " - " & objNode.Attributes.getNamedItem("version").Text & vbCrLf
+            strSoftwareList = strSoftwareList & "        " & objNode.Attributes.getNamedItem("productname").Text & " - " & objNode.Attributes.getNamedItem("version").Text & " -> " & objNodeVals.Attributes.getNamedItem("expected_version").Text & vbCrLf
         End If
     Next
 End Sub
@@ -201,7 +237,7 @@ If (objRegExp.Test(strOSCaption)) Then
 End If
 
 ' Determine Windows 10 update build
-If ((strAPIVer = "10.0") And Not (strOSBuild = "10240")) Then
+If ((strAPIVer = "10.0") And (strOSBuild = "10586")) Then
     bPostOSRelease = True
     strAPIVer = "10.1511"
 End If
@@ -244,7 +280,7 @@ Next
 strOfficeVersion = "Nothing"
 For Each objNode in colNodesReg
 	objRegExp.IgnoreCase = False
-	objRegExp.Pattern = "Office"
+	objRegExp.Pattern = "Microsoft Office"
 	If (objRegExp.Test(objNode.Attributes.getNamedItem("productname").Text)) Then
 		colOVers=Array("10","11","12","14","15","16")
 		For Each objNodeOVers in colOVers
@@ -300,7 +336,7 @@ End If
 
 ' Append to file, but don't write anything if strSoftwareList is empty
 If Len(strSoftwareList & "") > 0 Then
-    objTextFile.WriteLine(strTarget & ":")
+    objTextFile.WriteLine(strTarget & " (" & strDomainDesc & "):")
     objTextFile.WriteLine(strSoftwareList)
 End If
 objTextFile.Close

@@ -2,37 +2,70 @@
 <check>
  <software>
   <!-- <search name="String" literal="Bool" expected_version="String" include="String" exclude="String" /> -->
-  <search name="Adobe Acrobat DC" literal="False" expected_version="15.006.30094" include="" exclude=""/>
-  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="15.009.20079" include="" exclude=""/>
-  <search name="Adobe Acrobat XI" literal="False" expected_version="11.0.13" include="" exclude="" />
+  <search name="Adobe Acrobat DC" literal="False" expected_version="15.006.30198" include="" exclude=""/>
+  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="15.017.20050" include="" exclude=""/>
+  <search name="Adobe Acrobat XI" literal="False" expected_version="11.0.17" include="" exclude="" />
   <search name="Adobe Acrobat X" literal="False" expected_version="10.1.16" include="" exclude="XI" />
-  <search name="Adobe AIR" literal="False" expected_version="20.0.0.233" include="" exclude="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="20.0.0.270" include="ActiveX" exclude="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="20.0.0.267" include="NPAPI" exclude="" />
+  <search name="Adobe AIR" literal="False" expected_version="22.0.0.153" include="" exclude="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="22.0.0.210" include="ActiveX" exclude="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="22.0.0.209" include="NPAPI" exclude="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="22.0.0.209" include="PPAPI" exclude="" />
   <!-- Catch all Adobe Reader (no version number) as it should be replaced by Acrobat Reader DC -->
-  <search name="Adobe Reader" literal="False" expected_version="" include="" exclude="" />
-  <search name="Shockwave" literal="False" expected_version="12.2.2.172" include="" exclude="" />
-  <search name="iTunes" literal="False" expected_version="12.3.2" include="" exclude="" />
-  <search name="QuickTime" literal="False" expected_version="7.78.80.95" include="" exclude="" />
-  <search name="CCleaner" literal="False" expected_version="5.13" include="" exclude="" />
-  <search name="CDBurnerXP" literal="False" expected_version="4.5.6.5931" include="" exclude="" />
+  <search name="Adobe Reader" literal="False" expected_version="Deprecated. Please replace with Acrobat Reader DC." include="" exclude="" />
+  <search name="CCleaner" literal="False" expected_version="5.20" include="" exclude="" />
+  <search name="CDBurnerXP" literal="False" expected_version="4.5.7.6229" include="" exclude="" />
   <!-- Catch all CCCP (no version number) as it should be removed due to it being hopelessly out of date -->
-  <search name="Combined Community Codec Pack" literal="False" expected_version="" include="" exclude="" />
-  <search name="Citrix Receiver" literal="True" expected_version="4.4.0" include="" exclude="" />
+  <search name="Combined Community Codec Pack" literal="False" expected_version="Deprecated. Please replace with K-Lite Codec Pack." include="" exclude="" />
+  <search name="ConnectWise Internet Client" literal="False" expected_version="15.5.0" include="" exclude="" />
+  <search name="Citrix Receiver" literal="True" expected_version="4.4.1" include="" exclude="" />
+  <search name="CutePDF Writer" literal="False" expected_version="3.1" include="" exclude="" />
+  <search name="Dell SonicWALL NetExtender" literal="False" expected_version="7.5.225" include="" exclude="" />
+  <search name="Dell OpenManage" literal="False" expected_version="8.3.0" include="" exclude="Essential" />
+  <search name="Dell OpenManage" literal="False" expected_version="2.1.0" include="Essential" exclude="" />
+  <search name="GIMP" literal="False" expected_version="2.8.18" include="" exclude="" />
   <!-- Consumer versions of Chrome use Google Update version number...
        ...We don't care! We want only corp version of Chrome so that it can be controlled via GPO -->
-  <search name="Google Chrome" literal="False" expected_version="47.0.2526.106" include="" exclude="" />
+  <search name="Google Chrome" literal="False" expected_version="52.0.2743.82" include="" exclude="" />
   <search name="Google Earth" literal="False" expected_version="7.1.5.1557" include="" exclude="" />
-  <search name="GPL Ghostscript" literal="False" expected_version="9.18" include="" exclude="" />
-  <search name="K-Lite" literal="False" expected_version="11.8.2" include="" exclude="" />
-  <search name="Malwarebytes Anti-Malware" literal="False" expected_version="2.2.0.1024" include="" exclude="" />
-  <search name="Mozilla Firefox" literal="False" expected_version="43.0.3" include="" exclude="" />
-  <search name="Mozilla Thunderbird" literal="False" expected_version="38.5.0" include="" exclude="" />
-  <search name="Java" literal="False" expected_version="8.0.650.17" include="" exclude="Auto" />
-  <search name="ConnectWise Internet Client" literal="False" expected_version="15.5.0" include="" exclude="" />
-  <search name="Dell SonicWALL NetExtender" literal="False" expected_version="7.5.225" include="" exclude="" />
+  <search name="GPL Ghostscript" literal="False" expected_version="9.19" include="" exclude="" />
+  <search name="iTunes" literal="False" expected_version="12.4.2" include="" exclude="" />
+  <search name="Java" literal="False" expected_version="8.0.910.14" include="" exclude="Auto" />
+  <search name="K-Lite" literal="False" expected_version="12.2.6" include="" exclude="" />
   <search name="LabTech Client" literal="False" expected_version="10.0.0332" include="" exclude="" />
+  <search name="LibreOffice" literal="False" expected_version="5.1.4" include="Fresh" exclude="Still" />
+  <search name="LibreOffice" literal="False" expected_version="5.0.6" include="Still" exclude="Fresh" />
+<!-- Any version of MBAM should be removed here, but current is 2.2.0.1024 -->
+  <search name="Malwarebytes Anti-Malware" literal="False" expected_version="Deprecated. Please remove." include="" exclude="" />
+  <search name="Mozilla Firefox" literal="False" expected_version="47.0.1" include="" exclude="" />
+  <search name="Mozilla Thunderbird" literal="False" expected_version="45.2.0" include="" exclude="" />
+  <search name="OpenOffice" literal="False" expected_version="4.1.2" include="" exclude="" />
+  <search name="QuickTime" literal="False" expected_version="Deprecated, please remove." include="" exclude="" />
+  <search name="Shockwave" literal="False" expected_version="12.2.4.194" include="" exclude="" />
+  <search name="TeamViewer 11" literal="False" expected_version="11.0.63017" include="" exclude="" />
+  <search name="TeamViewer 10" literal="False" expected_version="10.0.47484" include="" exclude="" />
+  <search name="TeamViewer 9" literal="False" expected_version="9.0.41110" include="" exclude="" />
+  <search name="VLC" literal="False" expected_version="2.2.4" include="" exclude="" />
  </software>
+ <ms_update_software>
+  <search name="office" literal="False" string="Microsoft Office 2" include="" exclude="RT" />
+  <search name="officert" literal="False" string="Microsoft Office 2" include="RT" exclude="" />
+  <search name="word" literal="False" string="Microsoft Word" include="" exclude="RT" />
+  <search name="wordrt" literal="False" string="Microsoft Word" include="RT" exclude="" />
+  <search name="excel" literal="False" string="Microsoft Excel" include="" exclude="RT" />
+  <search name="excelrt" literal="False" string="Microsoft Excel" include="RT" exclude="" />
+  <search name="powerpoint" literal="False" string="Microsoft PowerPoint" include="" exclude="RT" />
+  <search name="powerpointrt" literal="False" string="Microsoft PowerPoint" include="RT" exclude="" />
+  <search name="visio" literal="False" string="Microsoft Visio" include="" exclude="RT" />
+  <search name="visiort" literal="False" string="Microsoft Visio" include="RT" exclude="" />
+  <search name="outlook" literal="False" string="Microsoft Outlook" include="" exclude="" />
+  <search name="ocp" literal="False" string="Microsoft Office Compatibility" include="RT" exclude="" />
+  <search name="vbr" literal="False" string="Microsoft VB Runtime" include="" exclude="" />
+  <search name="exchange" literal="False" string="Microsoft Exchange" include="" exclude="" />
+  <search name="sql" literal="False" string="Microsoft SQL Server" include="" exclude="Express" />
+  <search name="sqlexp" literal="False" string="Microsoft SQL Server" include="Express" exclude="" />
+  <search name="sp" literal="False" string="Microsoft SharePoint" include="" exclude="Foundation" />
+  <search name="spf" literal="False" string="Microsoft SharePoint" include="Foundation" exclude="" />
+ </ms_update_software>
  <updates>
  <!-- Update checking is more for spot check rather than exhaustive search (though it could be used for that purpose)
       I suggest using the list from the current month's Microsoft Security Bulletin Summary located at:
@@ -42,56 +75,21 @@
 	  earlier versions are not supported, additionally,'F', 'C', 'R', and 'S' modifiers are for "Full", "Core", "RT", and "Server" versions (respectively)
   <os_update kbid="#######" os="comma_delimited_OS_API_Versions" desc="Some description" vuln="MS15-xxx"/>
   <office_update kbid="#######" ov="comma_delimited_Office_API_Versions" desc="Some description" vuln="MS15-xxx"/>
-  <software_update kbid="#######" sv="regex_for_string_value_name" desc="Some description" vuln="MS15-xxx" date="2015-12-08"/>
+  <ie_update kbid="" iever="" desc="" vuln="" os="" date=""/>
+  <wmc_update kbid="" wmcver="" desc="" vuln="" date=""/>
+  <exchange_update kbid="" exver="" desc="" vuln="" date=""/>
+  <sql_update kbid="" sqlver="" desc="" vuln="" date=""/>
   -->
-  <!-- KB3116180 -->
-  <os_update kbid="3104002" os="6.0F,6.0S,6.1F,6.1S,6.2F,6.2S,6.2R,6.3F,6.3S,6.3R" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
-  <os_update kbid="3116869" os="10.0F" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Cumulative Security Update for Internet Explorer (KB3116180)" vuln="MS15-124" date="2015-12-08"/>
-  <!-- KB3116184 -->
-  <os_update kbid="3116869" os="10.0F" desc="Cumulative Security Update for Microsoft Edge (KB3116184)" vuln="MS15-125" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Cumulative Security Update for Microsoft Edge (KB3116184)" vuln="MS15-125" date="2015-12-08"/>
-  <!-- KB3116178 -->
-  <os_update kbid="3105579" os="6.0S,6.0C,6.1S,6.1C,6.2S,6.2C" desc="Cumulative Security Update for JScript and VBScript to Address Remote Code Execution (KB3116178)" vuln="MS15-126" date="2015-12-08"/>
-  <os_update kbid="3105578" os="6.3C" desc="Cumulative Security Update for JScript and VBScript to Address Remote Code Execution (KB3116178)" vuln="MS15-126" date="2015-12-08"/>
-  <!-- KB3100465 -->
-  <os_update kbid="3100465" os="6.0S,6.0C,6.1S,6.1C,6.2S,6.2C,6.3S,6.3C" desc="Security Update for Microsoft Windows DNS to Address Remote Code Execution (KB3100465)" vuln="MS15-127" date="2015-12-08"/>
-  <!-- KB3104503 -->
-  <os_update kbid="3109094" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
-  <os_update kbid="3116869" os="10.0F" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Security Update for Microsoft Graphics Component to Address Remote Code Execution (KB3104503)" vuln="MS15-128" date="2015-12-08"/>
-  <!-- KB3106614 -->
-  <software_update kbid="3106614" sv="Silerlight.*5" desc="Security Update for Silverlight to Address Remote Code Execution (KB3106614)" vuln="MS15-129" date="2015-12-08"/>
-  <!-- KB3108670 -->
-  <os_update kbid="3108670" os="6.2F,6.2S,6.2C" desc="Security Update for Microsoft Uniscribe to Address Remote Code Execution (KB3108670)" vuln="MS15-130" date="2015-12-08"/>
-  <!-- KB3116111 -->
-  <office_update kbid="3085549" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114422" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114458" ov="12" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3085528" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114403" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114415" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3101532" ov="14" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114342" ov="15,15R" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114382" ov="16" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114457" ov="OCP" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114431" ov="OCP" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <office_update kbid="3114433" ov="EV" desc="Security Update for Microsoft Office to Address Remote Code Execution (KB3116111)" vuln="MS15-131" date="2015-12-08"/>
-  <!-- KB3116162 -->
-  <os_update kbid="3108371" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
-  <os_update kbid="3108381" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
-  <os_update kbid="3108347" os="6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
-  <os_update kbid="3116869" os="10.0F" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Security Update for Microsoft Windows to Address Remote Code Execution (KB3116162)" vuln="MS15-132" date="2015-12-08"/>
-  <!-- KB3116130 -->
-  <os_update kbid="3109103" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
-  <os_update kbid="3116869" os="10.0F" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Security Update for Windows PGM to Address Elevation of Privilege (KB3116130)" vuln="MS15-133" date="2015-12-08"/>
-  <!-- KB3108669 -->
-  <software_update kbid="3108669" sv="Windows Media Center" desc="Security Update for Windows Media Center to Address Remote Code Execution (KB3108669)" vuln="MS15-134" date="2015-12-08"/>
-  <!-- KB3119075 -->
-  <os_update kbid="3109094" os="6.0F,6.0S,6.0C,6.1F,6.1S,6.1C,6.2F,6.2S,6.2C,6.2R,6.3F,6.3S,6.3C,6.3R" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
-  <os_update kbid="3116869" os="10.0F" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
-  <os_update kbid="3116900" os="10.1511" desc="Security Update for Windows Kernel-Mode Drivers to Address Elevation of Privilege (KB3119075)" vuln="MS15-135" date="2015-12-08"/>
+  <!-- Needs Software detection script for Office, Word, Excel, PowerPoint, Visio, Office RT, Word RT, Excel RT, PowerPoint RT, Office Compatibiliy Pack, Word Viewer, Excel Viewer, SharePoint,
+         SharePoint Foundation, VB Runtime, Windows Media Center, Internet Explorer, Edge -->
+  <!-- KB3134220 -->
+  <ie_update kbid="3134814" iever="9,10,11" desc="Cumulative Security Update for Internet Explorer" vuln="MS16-009" os="6.0F,6.0C,6.0S,6.1F,6.1C,6.1S,6.2F,6.2C,6.2S"/>
+  <!--KB3134225 -->
+  <!-- Windows 10 only --> 
+
+  <!-- Windows 10 and 10.1151 -->
+  <!-- KB3134220, KB3134225, 3138938 -->
+  <os_update kbid="3135174" os="10F,10C" desc="Cumulative Security Update for Internet Explorer (3134220), Cumulative Security Update for Microsoft Edge (3134225), Security Update for Microsoft Windows PDF Library to Address Remote Code Execution (3138938), Security Update for Windows Journal to Address Remote Code Execution (3134811)" vuln="MS16-009, MS16-011, MS16-012, MS16-013"/>
+  <os_update kbid="3135173" os="10.1511F, 10.1511C" desc="Cumulative Security Update for Internet Explorer (3134220), Cumulative Security Update for Microsoft Edge (3134225), Security Update for Windows Journal to Address Remote Code Execution (3134811)" vuln="MS16-009, MS16-011,MS16-013"/>
  </updates>
 </check>
