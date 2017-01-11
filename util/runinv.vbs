@@ -17,12 +17,12 @@ End Sub
 forceCScriptExecution
 
 Dim objNetwork, objFSO, objShell, objDoInventory, objFile, objTextFile, objFileOpen, objFullScript, objNode, objNodeVals, objNodeOVers
-Dim objRootDSE, objCn, objCmd, objRes
+Dim objRootDSE, objCn, objCmd, objRes, objWMISvc, objCname
 Dim strTarget, strReport, strUpdateReport, strTempFolder, strHtmlReport, strFullScript
 Dim strFullPath, strStylesheet, strLogo, strCl, strClH, strSoftwareList, strOpenFile, strAPIVer, strOSCaption, strOfficeVersion, strOSBuild
 Dim strRoot, strFilter, strAttributes, strScope, strTmp, strDescription, strDomainDesc
-Dim xmlDoc, xmlDocVals, colNodes, colNodesVals, colNodesReg, colNodesFeatures, colNodesPatches, colNodeOS, colNodesOSPatch, colNodesOfficePatch, colOVers
-Dim bPrintValues, bTestName, bTestVersion, bTestInclude, bTestExclude, bAvailable, bTestID, bTestOS, bHasGUITools, bHasGUI, bOSServer, bOSRT, bPostOSRelease
+Dim xmlDoc, xmlDocVals, colNodes, colNodesVals, colNodesReg, colNodesFeatures, colNodesPatches, colNodeOS, colNodesOSPatch, colNodesOfficePatch, colOVers, colComputers
+Dim bPrintValues, bTestName, bTestVersion, bTestInclude, bTestExclude, bTestVerSpec, bAvailable, bTestID, bTestOS, bHasGUITools, bHasGUI, bOSServer, bOSRT, bPostOSRelease, bIsDomainMember
 Dim objRegExp
 Set objRegExp = New RegExp
 
@@ -57,39 +57,70 @@ Else
     strTarget = WScript.Arguments.Item(0)
 End If
 
+On Error Resume Next
 
-' Get computer description from AD
-' https://social.technet.microsoft.com/Forums/scriptcenter/en-US/cb04f880-2b68-42fb-b9cb-747f5feddb80/script-to-grab-computer-ad-description-field?forum=ITCG
-' Just query the whole AD
-Set objRootDSE = GetObject("LDAP://RootDSE")
-strRoot = objRootDSE.Get("DefaultNamingContext")
-strfilter = "(&(objectCategory=Computer)(objectClass=Computer) (cn=" & strTarget & "))"
-strAttributes = "description"
-strScope = "subtree"
-Set objCn = CreateObject("ADODB.Connection")
-Set objCmd = CreateObject("ADODB.Command")
+Set objWMISvc = GetObject("winmgmts:\\.\root\cimv2")
+Set colComputers = objWMISvc.ExecQuery("Select * from Win32_ComputerSystem")
+For Each objCname in colComputers
+    Select Case objCname.DomainRole 
+        Case 0
+            ' Standlaone Workstation
+            bIsDomainMember = False
+        Case 1        
+            ' Member Workstation
+            bIsDomainMember = True
+        Case 2
+            ' Standalone Server
+            bIsDomainMember = False
+        Case 3
+            ' Member Server
+            bIsDomainMember = True
+        Case 4
+            ' Backup Domain Controller (?)
+            bIsDomainMember = True
+        Case 5
+            ' Primary Domain Controller (?)
+            bIsDomainMember = True
+    End Select
+Next
 
-objCn.Provider = "ADsDSOObject"
-objCn.Open "Active Directory Provider"
-objCmd.ActiveConnection = objCn
-objCmd.Properties("Page Size") = 1000
-objCmd.commandtext = "<LDAP://" & strRoot & ">;" & strFilter & ";" & strAttributes & ";" & strScope
-Set objRes = objCmd.Execute
+If (bIsDomainMember) Then
+'DEBUG    wscript.echo "Getting domain text"
+    ' Get computer description from AD
+    set strDomainDesc = ""
+    ' https://social.technet.microsoft.com/Forums/scriptcenter/en-US/cb04f880-2b68-42fb-b9cb-747f5feddb80/script-to-grab-computer-ad-description-field?forum=ITCG
+    ' Just query the whole AD
+    Set objRootDSE = GetObject("LDAP://RootDSE")
+    strRoot = objRootDSE.Get("DefaultNamingContext")
+    strfilter = "(&(objectCategory=Computer)(objectClass=Computer) (cn=" & strTarget & "))"
+    strAttributes = "description"
+    strScope = "subtree"
+    Set objCn = CreateObject("ADODB.Connection")
+    Set objCmd = CreateObject("ADODB.Command")
 
-Do While Not objRes.EOF
-    strDescription = ""
-    If Not (IsNUll(objRes.Fields("description").Value)) Then
-        For Each strTmp in objRes.Fields("description").Value
-            strDescription = strTmp
-        Next
-    End If
-    strDomainDesc = strDescription
-    objRes.MoveNext
-Loop
+    objCn.Provider = "ADsDSOObject"
+    objCn.Open "Active Directory Provider"
+    objCmd.ActiveConnection = objCn
+    objCmd.Properties("Page Size") = 1000
+    objCmd.commandtext = "<LDAP://" & strRoot & ">;" & strFilter & ";" & strAttributes & ";" & strScope
+    Set objRes = objCmd.Execute
 
-objRes.close
-ObjCn.close
+    Do While Not objRes.EOF
+        strDescription = ""
+        If Not (IsNUll(objRes.Fields("description").Value)) Then
+            For Each strTmp in objRes.Fields("description").Value
+                strDescription = strTmp
+            Next
+        End If
+        strDomainDesc = strDescription
+        objRes.MoveNext
+    Loop
 
+    objRes.close
+    ObjCn.close
+Else
+    set strDomainDesc = "N/A"
+End If
 
 ' Get file paths
 strTempFolder = objFSO.GetSpecialFolder(2)
@@ -104,9 +135,9 @@ strHtmlReport = strFullPath & "\..\Reports\" & strTarget & ".html"
 'End DEBUG
 strUpdateReport = strFullPath & "\..\Reports\NeedsUpdate.txt"
 strStylesheet = strFullPath & "\..\util\serverhtml.xsl"
-strLogo = "LOGO.jpg"
-strCl = strFullPath & "\..\sydi-server\sydi-server.vbs -t" & strTarget & " -ex -o" & strReport & " -sh"
-strClH = strFullPath & "\..\sydi-server\tools\sydi-transform.vbs -x" & strReport & " -s" &strStylesheet & " -o" & strHtmlReport
+strLogo = "BladeLogo.png"
+strCl = strFullPath & "\..\Server2.4\sydi-server.vbs -t" & strTarget & " -ex -o" & strReport & " -sh"
+strClH = strFullPath & "\..\Server2.4\tools\sydi-transform.vbs -x" & strReport & " -s" &strStylesheet & " -o" & strHtmlReport
 objShell.Run "cscript.exe " & strCl, 0, vbTrue
 
 Set xmlDoc = CreateObject("Microsoft.XMLDOM")
@@ -158,6 +189,16 @@ Sub DoSoftwareSearch
                     objRegExp.Pattern = objNodeVals.Attributes.getNamedItem("exclude").Text
                     bTestExclude = objRegExp.Test(objNode.Attributes.getNamedItem("productname").Text)
                     If (bTestExclude) Then
+                        bPrintValues = False
+                    End If
+                End If
+				' Same thing for verspec - typically these check for major version, but can be extended as it is a regex
+				If Len(objNodeVals.Attributes.getNamedItem("verspec").Text & "") > 0 Then
+				    ' the value "verspec" is not empty, test the version for a match as well...
+					objRegExp.IgnoreCase = False
+                    objRegExp.Pattern = objNodeVals.Attributes.getNamedItem("verspec").Text
+                    bTestVerSpec = objRegExp.Test(objNode.Attributes.getNamedItem("version").Text)
+                    If Not (bTestVerSpec) Then
                         bPrintValues = False
                     End If
                 End If
@@ -236,10 +277,20 @@ If (objRegExp.Test(strOSCaption)) Then
     strAPIVer = strAPIVer & "R"
 End If
 
-' Determine Windows 10 update build
-If ((strAPIVer = "10.0") And (strOSBuild = "10586")) Then
-    bPostOSRelease = True
-    strAPIVer = "10.1511"
+' Determine Windows 10/Server 2016 update build
+If (strAPIVer = "10.0") Then
+    Select Case strOSBuild 
+        Case 10240
+            bPostOSRelease = False
+			strAPIVer = "10.0"
+			' 10240 is a special case, it is RTM therefore is not PostOSRelease so it keeps the 10.0 APIVer despite the actual build number of 1507
+        Case 10586        
+            bPostOSRelease = True
+			strAPIVer = "10.1511"
+        Case 14393
+            bPostOSRelease = True
+			strAPIVer = "10.1607"
+    End Select
 End If
 
 ' Tag as F if not RT, Server, or a post relase build
