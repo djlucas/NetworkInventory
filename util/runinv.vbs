@@ -136,8 +136,8 @@ strHtmlReport = strFullPath & "\..\Reports\" & strTarget & ".html"
 strUpdateReport = strFullPath & "\..\Reports\NeedsUpdate.txt"
 strStylesheet = strFullPath & "\..\util\serverhtml.xsl"
 strLogo = "BladeLogo.png"
-strCl = strFullPath & "\..\Server2.4\sydi-server.vbs -t" & strTarget & " -ex -o" & strReport & " -sh"
-strClH = strFullPath & "\..\Server2.4\tools\sydi-transform.vbs -x" & strReport & " -s" &strStylesheet & " -o" & strHtmlReport
+strCl = strFullPath & "\..\sydi-server\sydi-server.vbs -t" & strTarget & " -ex -o" & strReport & " -sh"
+strClH = strFullPath & "\..\sydi-server\tools\sydi-transform.vbs -x" & strReport & " -s" &strStylesheet & " -o" & strHtmlReport
 objShell.Run "cscript.exe " & strCl, 0, vbTrue
 
 Set xmlDoc = CreateObject("Microsoft.XMLDOM")
