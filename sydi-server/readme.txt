@@ -1,3 +1,0 @@
-You'll need to download this from a separate repo...
-For now, use mine. Hopefully the necessary changes will wind up in the main distribution.
-https://github.com/djlucas/sydi-server/archive/master.zip
