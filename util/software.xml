@@ -10,56 +10,57 @@
   -->
   <search name="7-Zip" literal="False" expected_version="16.04" include="" exclude="" verspec="" />
   <!-- Adobe Acrobat DC and Acrobat Reader DC can use a fast track or classic update path...use classic for full product, and fast track for Reader -->
-  <search name="Adobe Acrobat DC" literal="False" expected_version="15.006.30279" include="" exclude="" verspec=""/>
-  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="15.023.20053" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat DC" literal="False" expected_version="15.006.30280" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="15.023.20056" include="" exclude="" verspec=""/>
   <search name="Adobe Acrobat XI" literal="False" expected_version="11.0.19" include="" exclude="" verspec="" />
   <search name="Adobe Acrobat" literal="False" expected_version="Deprecated. Please upgrade to Acrobat XI or DC." include="" exclude="" verspec="^([2-9]|10)" />
   <search name="Adobe AIR" literal="False" expected_version="24.0.0.180" include="" exclude="" verspec="" />
   <!-- Occasionally Version strings differ across the different Flash targets, most times not -->
-  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.194" include="" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.221" include="" exclude="" verspec="" />
   <!--
-  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.194" include="ActiveX" exclude="" verspec="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.194" include="NPAPI" exclude="" verspec="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.194" include="PPAPI" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.221" include="ActiveX" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.221" include="NPAPI" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="24.0.0.221" include="PPAPI" exclude="" verspec="" />
   -->
   <!-- Catch all Adobe Reader (no version number) as it should be replaced by Acrobat Reader DC -->
   <search name="Adobe Reader" literal="False" expected_version="Deprecated. Please replace with Acrobat Reader DC." include="" exclude="" verspec="" />
-  <search name="CCleaner" literal="False" expected_version="5.25" include="" exclude="" verspec="" />
-  <search name="CDBurnerXP" literal="False" expected_version="4.5.7.6499" include="" exclude="" verspec="" />
+  <search name="CCleaner" literal="False" expected_version="5.27" include="" exclude="" verspec="" />
+  <search name="CDBurnerXP" literal="False" expected_version="4.5.7.6521" include="" exclude="" verspec="" />
   <!-- Catch all CCCP (no version number) as it should be removed due to it being hopelessly out of date -->
   <search name="Combined Community Codec Pack" literal="False" expected_version="Deprecated. Please replace with K-Lite Codec Pack." include="" exclude="" verspec="" />
   <search name="ConnectWise Internet Client" literal="False" expected_version="16.3.2" include="" exclude="" verspec="" />
-  <search name="Citrix Receiver" literal="True" expected_version="4.6" include="" exclude="" verspec="" />
+  <!-- Latest Receiver is 4.6 but it has printig issues - Stick with 4.4.3000 until March when 4.7 is released -->
+  <search name="Citrix Receiver" literal="True" expected_version="4.4" include="" exclude="" verspec="" />
   <search name="CutePDF Writer" literal="False" expected_version="3.1" include="" exclude="" verspec="" />
   <search name="Dell OpenManage" literal="False" expected_version="8.4.0" include="" exclude="Essential" />
   <search name="Dell OpenManage" literal="False" expected_version="2.2.0.1" include="Essential" exclude="" verspec="" />
-  <search name="eDrawings" literal="False" expected_version="16.1.0029" include="" exclude="" verspec="" />
+  <search name="eDrawings" literal="False" expected_version="17.0.0583" include="" exclude="" verspec="" />
   <search name="GIMP" literal="False" expected_version="2.8.18" include="" exclude="" verspec="" />
   <!-- Consumer versions of Chrome use Google Update version number...
        ...We don't care! We want only corp version of Chrome so that it can be controlled via GPO -->
-  <search name="Google Chrome" literal="False" expected_version="55.0.2883.87" include="" exclude="" verspec="" />
-  <search name="Google Earth" literal="False" expected_version="7.1.7.2606" include="" exclude="" verspec="" />
+  <search name="Google Chrome" literal="False" expected_version="56.0.2924.87" include="" exclude="" verspec="" />
+  <search name="Google Earth" literal="False" expected_version="7.1.8.3036" include="" exclude="" verspec="" />
   <search name="GPL Ghostscript" literal="False" expected_version="9.20" include="" exclude="" verspec="" />
-  <search name="iTunes" literal="False" expected_version="12.5.4" include="" exclude="" verspec="" />
-  <search name="iCloud" literal="False" expected_version="6.1.0.30" include="" exclude="" verspec="" />
+  <search name="iTunes" literal="False" expected_version="12.5.5" include="" exclude="" verspec="" />
+  <search name="iCloud" literal="False" expected_version="6.1.2.13" include="" exclude="" verspec="" />
   <search name="IrfanView" literal="False" expected_version="4.44" include="" exclude="" verspec="" />
-  <search name="Java" literal="False" expected_version="8.0.1110.14" include="" exclude="Auto" verspec="" />
-  <search name="K-Lite" literal="False" expected_version="12.7.8" include="" exclude="" verspec="" />
+  <search name="Java" literal="False" expected_version="8.0.1210.13" include="" exclude="Auto" verspec="" />
+  <search name="K-Lite" literal="False" expected_version="12.9.3" include="" exclude="" verspec="" />
   <search name="LabTech Client" literal="False" expected_version="10.0.0332" include="" exclude="" verspec="" />
-  <search name="LabTech Control Center" literal="False" expected_version="10.5.289" include="" exclude="" verspec="" />
-  <search name="LibreOffice" literal="False" expected_version="5.2.4" include="Fresh" exclude="Still" verspec="" />
-  <search name="LibreOffice" literal="False" expected_version="5.1.6" include="Still" exclude="Fresh" verspec="" />
+  <search name="LabTech Control Center" literal="False" expected_version="11.0.345" include="" exclude="" verspec="" />
+<!-- Fresh -->  <search name="LibreOffice" literal="False" expected_version="5.3.0" include="" exclude="" verspec="" />
+<!-- Still  <search name="LibreOffice" literal="False" expected_version="5.2.5" include="" exclude="" verspec="" /> -->
 <!-- Any version of MBAM should be removed here, but current is 2.2.0.1024 -->
   <search name="Malwarebytes Anti-Malware" literal="False" expected_version="Deprecated. Please remove." include="" exclude="" verspec="" />
-  <search name="Mozilla Firefox" literal="False" expected_version="50.1.0." include="" exclude="" verspec="" />
-  <search name="Mozilla Thunderbird" literal="False" expected_version="45.6.0" include="" exclude="" verspec="" />
+  <search name="Mozilla Firefox" literal="False" expected_version="51.0.1" include="" exclude="" verspec="" />
+  <search name="Mozilla Thunderbird" literal="False" expected_version="45.7.1" include="" exclude="" verspec="" />
   <search name="OpenOffice" literal="False" expected_version="4.1.3" include="" exclude="" verspec="" />
   <search name="QuickBooks" literal="True" expected_version="24.0.4015.2403" include="" exclude="" verspec="^24" /> <!-- QB-2014 R15 -->
   <search name="QuickBooks" literal="True" expected_version="25.0.4013.2506" include="" exclude="" verspec="^25" /> <!-- QB-2015 R13 -->
   <search name="QuickBooks" literal="True" expected_version="26.0.4009.2607" include="" exclude="" verspec="^26" /> <!-- QB-2016 R9 -->
   <search name="QuickBooks" literal="True" expected_version="27.0.4004.2702" include="" exclude="" verspec="^27" /> <!--QB 2017 R4 -->
   <search name="QuickTime" literal="False" expected_version="Deprecated, please remove." include="" exclude="" verspec="" />
-  <search name="Shockwave" literal="False" expected_version="12.2.5.195" include="" exclude="" verspec="" />
+  <search name="Shockwave" literal="False" expected_version="12.2.5.196" include="" exclude="" verspec="" />
   <search name="SonicWALL Global VPN Client" literal="False" expected_version="4.9.14.0427" include="" exclude="" verspec="" />
   <search name="SonicWALL NetExtender" literal="False" expected_version="8.0.241" include="" exclude="" verspec="" />
   <search name="SonicWALL SSL-VPN NetExtender" literal="False" expected_version="Deprecated. Please replace with Dell SonicWall NetExtender 8.x." include="" exclude="" verspec="" />
@@ -106,13 +107,15 @@
   <!-- Needs Software detection script for Office, Word, Excel, PowerPoint, Visio, Office RT, Word RT, Excel RT, PowerPoint RT, Office Compatibiliy Pack, Word Viewer, Excel Viewer, SharePoint,
          SharePoint Foundation, VB Runtime, Windows Media Center, Internet Explorer, Edge -->
   <!-- KB3204059 -->
-  <!-- For OS and IE updates, only check for the monthly roll-ups, not individual patches for platforms that support them (6.1+, Vista and XP are off of the radar) -->
-  <os_update kbid="3207752" os="6.1F,6.1C,6.1S" desc="December 2016 Security Monthly Quality Rollup for Windows 7 SP1 and Windows Server 2008 R2 SP1" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
+  <!-- For OS and IE updates, only check for the monthly roll-ups, not individual patches for platforms that support them (6.0+, XP is off of the radar) -->
+  <os_update kbid="3216775" os="6.0F,6.0C,6.0S" desc="January 2016 Security Monthly Quality Rollup for Windows Vista SP2 and Windows Server 2008 SP2" vuln="MS17-004"/>
+  <os_update kbid="3212646" os="6.1F,6.1C,6.1S" desc="January 2016 Security Monthly Quality Rollup for Windows 7 SP1 and Windows Server 2008 R2 SP1" vuln="MS17-004"/>
   <os_update kbid="3205409" os="6.2S" desc="December 2016 Security Monthly Quality Rollup for Windows Server 2012" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
   <os_update kbid="3205401" os="6.3F,6.3C,6.3R,6.3S" desc="December 2016 Security Monthly Quality Rollup for Windows 8.1 and Windows Server 2012 R2" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
-  <os_update kbid="3205383" os="10.0F,10.0C" desc="December 2016 Security Monthly Quality Rollup for Windows 10" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
-  <os_update kbid="3205386" os="10-1511F,10-1511C" desc="December 2016 Security Monthly Quality Rollup for Windows 10 build 1511" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
-  <os_update kbid="3206632" os="10-1607F,10-1607C,10-1607S" desc="December 2016 Security Monthly Quality Rollup for Windows 10 build 1607 and Windows Server 2016" vuln="MS16-144,MS16-146,MS16-147,MS16-149,MS16-151,MS16-153"/>
+  <os_udpate kbid="3214628" os="6.2S,6.3F,6.3C,6.3R,6.3S,10.0F,10.0C,10-1511F,10-1511C,10-1607F,10-1607C,10-1607S" desc="Security Update for Adobe Flash Player" vuln="MS17-003"/>
+  <os_update kbid="3210720" os="10.0F,10.0C" desc="January 2016 Security Monthly Quality Rollup for Windows 10" vuln="MS17-001,"/>
+  <os_update kbid="3210721" os="10-1511F,10-1511C" desc="January 2016 Security Monthly Quality Rollup for Windows 10 build 1511" vuln="MS17-001,"/>
+  <os_update kbid="3213986" os="10-1607F,10-1607C,10-1607S" desc="January 2016 Security Monthly Quality Rollup for Windows 10 build 1607 and Windows Server 2016" vuln="MS17-001,"/>
   <!--os="6.0F,6.0C,6.0S,6.1F,6.1C,6.1S,6.2F,6.2C,6.2S"-->
  </updates>
 </check>
