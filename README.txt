@@ -16,12 +16,6 @@ is set by GPO, you'll need to do the following:
                 The other two are to taste, but not necessary, though I usually include them.
                 Edit after creation and choose only Domain Profile (advanced tab).
 
-Additionally, LabTech also requires the firewall open for the network Probe. Create a new rule, choose:
-                Custom->All programs->Any->local:Any,remote:These IP addresses (insert DC/Probe IPs here)->
-                Allow->Only Domain->Allow DC/Probe connections->Finish
-
-These can all be done in the same GPO.
-
 ===
 
 Manual Run:
@@ -39,6 +33,11 @@ Reports: Obvious!
 Server2.4:  If this looks familiar, it is. Unfortunatly, it has been modified a lot (see the changelog in the Server2.4 folder).
 Patches have been sent to the Sydi author, but I expect it'll be a while before they are even considered.
 
+For now, this has been removed and replaced with an empty directory. You need to
+use the branch from my github available at:
+https://github.com/djlucas/sydi-server/tree/NetworkInventory - Just place the
+contents into the Server2.4 direcotry for now.
+
 ===
 
 util: This directory contains the inventory control script (runinv.vbs) and the software list (software.xml)
@@ -52,8 +51,6 @@ Inventory.vbs: Add subnet IP scan (nmap?)
 Inventory.vbs: Add pubic SNMP scanning for objects identified in IP scan (nmap capable directly?)
 Inventory.vbs: Add index.html and include all recognized devices and links to existing html output
 util/runinv.vbs: add state file for external status block reporting (add CL argument so that montioring can be done in Inventory.vbs)
-util/runinv.vbs: convert to XML output and attempt use of existing stylesheet for html output
-util/runinv.vbs: add expected version output to NeedsUpdate.txt report
 util/runsnmpinv.vbs: create/add
 Server2.4/Sydi-server.vbs: Cleanup duplicate objects (WShell.Script and Scripting.FilesystemObject)
 Server2.4/Sydi-server.vbs: Cleanup duplicate code path for x86/x86_64 reg reads (add Sub for duplicate internal loops)
