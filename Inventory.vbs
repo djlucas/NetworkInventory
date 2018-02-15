@@ -20,9 +20,9 @@ Dim strFilePath, strFileUpdPath, objFSO, objWShell, objFullScript, objFile, objF
 Dim objRootDSE, strDNSDomain, strFullScript, strFullPath, strFilter, strQuery, adoRecordset, adoConnection, adoCommand
 Dim strComputerDN, objShell, lngBiasKey, lngBias
 Dim objDate, dtmPwdLastSet, k, WshDoInventory, arrayTarget, strTarget
-Dim intDays, objComputer, ForReading
-Dim intTotal, intInactive, intActive
-Dim strActiveList, strComputerName, intFirstSplit, intSecondSplit, intDiffSplit
+Dim intDays, intODays, objComputer, ForReading
+Dim intTotal, intOrphaned, intInactive, intActive
+Dim arrOutput, strOutLine, strActiveList, strComputerName, intFirstSplit, intSecondSplit, intDiffSplit
 Dim objRegExEx, objFSOEx, objFileEx, objRegExSql, objFSOSql, objFileSql
 On Error Resume Next
 
@@ -42,8 +42,9 @@ Function Integer8Date(objDate, lngBias)
 End Function
 
 ' Specify the minimum number of days since the password was last set for
-' the computer account to be considered inactive.
+' the computer account to be considered inactive (intDays) and orphaned (intODays)
 intDays = 90
+intODays = 180
 
 ' We'll be doing work on the filesystem and we'll need a shell
 Set objFSO = CreateObject("Scripting.FileSystemObject")
@@ -120,12 +121,38 @@ objFile.WriteLine "Search for Inactive Computer Accounts"
 objFile.WriteLine "Start: " & Now
 objFile.WriteLine "Base of search: " & strDNSDomain
 objFile.WriteLine "Log File: " & strFilePath
+objFile.WriteLine "Orphaned if password not set in days: " & intODays
 objFile.WriteLine "Inactive if password not set in days: " & intDays
 objFile.WriteLine "----------------------------------------------"
 
 ' Initialize totals.
 intTotal = 0
 intInactive = 0
+intOrphaned = 0
+
+' Store output in array
+Set arrOutput = CreateObject("System.Collections.ArrayList")
+
+' Enumerate all computers and determine which are orphaned.
+Set adoRecordset = adoCommand.Execute
+Do Until adoRecordset.EOF
+    strComputerDN = adoRecordset.Fields("distinguishedName").Value
+    ' Escape any forward slash characters, "/", with the backslash
+    ' escape character. All other characters that should be escaped are.
+    strComputerDN = Replace(strComputerDN, "/", "\/")
+    ' Determine date when password last set.
+    Set objDate = adoRecordset.Fields("pwdLastSet").Value
+    dtmPwdLastSet = Integer8Date(objDate, lngBias)
+    ' Check if computer object orphaned.
+    If (DateDiff("d", dtmPwdLastSet, Now) > intODays) Then
+        intOrphaned = intOrphaned + 1
+        intTotal = intTotal + 1
+        arrOutput.Add "Orphaned: " & strComputerDN & " - password last set: " & dtmPwdLastSet
+        On Error Resume Next
+    End If
+    adoRecordset.MoveNext
+Loop
+adoRecordset.Close
 
 ' Enumerate all computers and determine which are inactive.
 Set adoRecordset = adoCommand.Execute
@@ -134,16 +161,18 @@ Do Until adoRecordset.EOF
     ' Escape any forward slash characters, "/", with the backslash
     ' escape character. All other characters that should be escaped are.
     strComputerDN = Replace(strComputerDN, "/", "\/")
-    intTotal = intTotal + 1
     ' Determine date when password last set.
     Set objDate = adoRecordset.Fields("pwdLastSet").Value
     dtmPwdLastSet = Integer8Date(objDate, lngBias)
     ' Check if computer object inactive.
     If (DateDiff("d", dtmPwdLastSet, Now) > intDays) Then
-        ' Computer object inactive.
-        intInactive = intInactive + 1
-        objFile.WriteLine "Inactive: " & strComputerDN & " - password last set: " & dtmPwdLastSet
-        On Error Resume Next
+        If (DateDiff("d", dtmPwdLastSet, Now) < intODays) Then
+            ' Computer object inactive.
+            intInactive = intInactive + 1
+            intTotal = intTotal + 1
+            arrOutput.Add "Inactive: " & strComputerDN & " - password last set: " & dtmPwdLastSet
+            On Error Resume Next
+        End If
     End If
     adoRecordset.MoveNext
 Loop
@@ -162,8 +191,8 @@ Do Until adoRecordset.EOF
     If (DateDiff("d", dtmPwdLastSet, Now) < intDays) Then
         ' Computer object Active.
         intActive = intActive + 1
-        objFile.WriteLine "Active: " & strComputerDN _
-        & " - password last set: " & dtmPwdLastSet
+        intTotal = intTotal + 1
+        arrOutput.Add "Active: " & strComputerDN & " - password last set: " & dtmPwdLastSet
         ' Write the report file to feed into network scanning tool
         intFirstSplit = InStr(strComputerDN, "CN=") + 3 ' We'll crop to that character
         intSecondSplit = InStr(intFirstSplit, strComputerDN, "=") - 3 ' Delete to the comma
@@ -176,11 +205,18 @@ Do Until adoRecordset.EOF
 Loop
 adoRecordset.Close
 
+'Sort and write to output
+arrOutput.Sort()
+For each strOutLine in arrOutput
+     objFile.WriteLine strOutLine
+Next
+
 ' Write totals to log file.
 objFile.WriteLine "Finished: " & Now
 objFile.WriteLine "Total computer objects found:   " & intTotal
 objFile.WriteLine "Acive:                          " & intActive
 objFile.WriteLine "Inactive:                       " & intInactive
+objFile.WriteLine "Orphaned:                       " & intOrphaned
 objFile.WriteLine "----------------------------------------------"
 
 ' Display summary.
