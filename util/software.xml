@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <check>
- <listver>20180214-1743</listver>
+ <listver>20180226-1530</listver>
  <software>
   <!--
   <search name="String" literal="Bool" expected_version="String" include="regex" exclude="regex" verspec="regex"/>
@@ -43,7 +43,7 @@
   <search name="GIMP" literal="False" expected_version="2.8.22" include="" exclude="" verspec="" />
   <!-- Consumer versions of Chrome use Google Update version number...
        ...We don't care! We want only corp version of Chrome so that it can be controlled via GPO -->
-  <search name="Google Chrome" literal="False" expected_version="64.0.3282.168" include="" exclude="" verspec="" />
+  <search name="Google Chrome" literal="False" expected_version="64.0.3282.186" include="" exclude="" verspec="" />
   <search name="Google Earth" literal="False" expected_version="Deprecated. Please upgrade to Google Earth Pro." include="" exclude="Pro" verspec="" />
   <search name="Google Earth" literal="False" expected_version="7.3.1" include="Pro" exclude="" verspec="" />
   <search name="GPL Ghostscript" literal="False" expected_version="9.22" include="" exclude="" verspec="" />
@@ -52,7 +52,7 @@
   <search name="IrfanView" literal="False" expected_version="4.50" include="" exclude="" verspec="" />
   <search name="Java" literal="False" expected_version="8.0.1610.12" include="" exclude="Auto" verspec="^8" />
   <search name="Java" literal="False" expected_version="9.0.4" include="" exclude="Auto" verspec="^9" />
-  <search name="K-Lite" literal="False" expected_version="13.8.1" include="" exclude="" verspec="" />
+  <search name="K-Lite" literal="False" expected_version="14.0.2" include="" exclude="" verspec="" />
   <search name="LabTech" literal="False" expected_version="11.0.441" include="Remote" exclude="" verspec="" />
   <search name="LabTech Software Control Center" literal="False" expected_version="11.0.360" include="" exclude="" verspec="" />
 <!-- Fresh -->  <search name="LibreOffice" literal="False" expected_version="6.0.1" include="" exclude="" verspec="" />
