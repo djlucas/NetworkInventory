@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <check>
- <listver>20180226-1530</listver>
+ <listver>20180316-1814</listver>
  <software>
   <!--
   <search name="String" literal="Bool" expected_version="String" include="regex" exclude="regex" verspec="regex"/>
@@ -10,22 +10,22 @@
         verspec: regex comparison against complete version (not expected_version - this is for supporting multiple acceptable versions)
   -->
   <search name="7-Zip" literal="False" expected_version="18.01" include="" exclude="" verspec="" />
-  <search name="Adobe Acrobat 2015" literal="False" expected_version="15.006.30413" include="" exclude="" verspec=""/>
-  <search name="Adobe Acrobat 2017" literal="False" expected_version="17.011.30078" include="" exclude="" verspec=""/>
-  <search name="Adobe Acrobat DC" literal="False" expected_version="18.011.20036" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat 2015" literal="False" expected_version="15.006.30417" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat 2017" literal="False" expected_version="17.011.30079" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat DC" literal="False" expected_version="18.011.20038" include="" exclude="" verspec=""/>
   <!-- Only use DC for reader unless there is a special requirement for XI -->
   <search name="Adobe Acrobat Reader" literal="False" expected_version="Please use Acrobat Reader DC for client installs" include="201" exclude="" verspec=""/>
   <search name="Adobe Reader" literal="False" expected_version="Deprecated. Please replace with Acrobat Reader DC." include="" exclude="" verspec="" />
-  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="18.011.20036" include="" exclude="" verspec=""/>
+  <search name="Adobe Acrobat Reader DC" literal="False" expected_version="18.011.20038" include="" exclude="" verspec=""/>
   <search name="Adobe Acrobat XI" literal="False" expected_version="11.0.23" include="" exclude="" verspec="" />
   <search name="Adobe Acrobat" literal="False" expected_version="Deprecated. Please upgrade to Acrobat XI or DC." include="" exclude="" verspec="^([2-9]|10)" />
-  <search name="Adobe AIR" literal="False" expected_version="28.0.0.127" include="" exclude="" verspec="" />
+  <search name="Adobe AIR" literal="False" expected_version="29.0.0.112" include="" exclude="" verspec="" />
   <!-- Occasionally Version strings differ across the different Flash targets, most times not -->
-  <search name="Adobe Flash Player" literal="False" expected_version="28.0.0.161" include="" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="29.0.0.113" include="" exclude="" verspec="" />
   <!--
-  <search name="Adobe Flash Player" literal="False" expected_version="28.0.0.161" include="ActiveX" exclude="" verspec="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="28.0.0.161" include="NPAPI" exclude="" verspec="" />
-  <search name="Adobe Flash Player" literal="False" expected_version="28.0.0.161" include="PPAPI" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="29.0.0.113" include="ActiveX" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="29.0.0.113" include="NPAPI" exclude="" verspec="" />
+  <search name="Adobe Flash Player" literal="False" expected_version="29.0.0.113" include="PPAPI" exclude="" verspec="" />
   -->
   <search name="CCleaner" literal="False" expected_version="5.40" include="" exclude="" verspec="" />
   <search name="CDBurnerXP" literal="False" expected_version="4.5.8.6795" include="" exclude="" verspec="" />
@@ -43,7 +43,7 @@
   <search name="GIMP" literal="False" expected_version="2.8.22" include="" exclude="" verspec="" />
   <!-- Consumer versions of Chrome use Google Update version number...
        ...We don't care! We want only corp version of Chrome so that it can be controlled via GPO -->
-  <search name="Google Chrome" literal="False" expected_version="64.0.3282.186" include="" exclude="" verspec="" />
+  <search name="Google Chrome" literal="False" expected_version="65.0.3325.162" include="" exclude="" verspec="" />
   <search name="Google Earth" literal="False" expected_version="Deprecated. Please upgrade to Google Earth Pro." include="" exclude="Pro" verspec="" />
   <search name="Google Earth" literal="False" expected_version="7.3.1" include="Pro" exclude="" verspec="" />
   <search name="GPL Ghostscript" literal="False" expected_version="9.22" include="" exclude="" verspec="" />
@@ -52,13 +52,13 @@
   <search name="IrfanView" literal="False" expected_version="4.50" include="" exclude="" verspec="" />
   <search name="Java" literal="False" expected_version="8.0.1610.12" include="" exclude="Auto" verspec="^8" />
   <search name="Java" literal="False" expected_version="9.0.4" include="" exclude="Auto" verspec="^9" />
-  <search name="K-Lite" literal="False" expected_version="14.0.2" include="" exclude="" verspec="" />
+  <search name="K-Lite" literal="False" expected_version="14.0.4" include="" exclude="" verspec="" />
   <search name="LabTech" literal="False" expected_version="11.0.441" include="Remote" exclude="" verspec="" />
   <search name="LabTech Software Control Center" literal="False" expected_version="11.0.360" include="" exclude="" verspec="" />
-<!-- Fresh -->  <search name="LibreOffice" literal="False" expected_version="6.0.1" include="" exclude="" verspec="" />
+<!-- Fresh -->  <search name="LibreOffice" literal="False" expected_version="6.0.2" include="" exclude="" verspec="" />
 <!-- Still <search name="LibreOffice" literal="False" expected_version="5.4.5" include="" exclude="" verspec="" /> -->
   <search name="Malwarebytes" literal="False" expected_version="3.3.1.2183" include="" exclude="" verspec="" />
-  <search name="Mozilla Firefox" literal="False" expected_version="58.0.2" include="" exclude="" verspec="" />
+  <search name="Mozilla Firefox" literal="False" expected_version="59.0.1" include="" exclude="" verspec="" />
   <search name="Mozilla Thunderbird" literal="False" expected_version="52.6.0" include="" exclude="" verspec="" />
   <search name="Notepad++" literal="False" expected_version="7.5.4" include="" exclude="" verspec="" />
   <search name="OpenOffice" literal="False" expected_version="4.1.5" include="" exclude="" verspec="" />
@@ -68,7 +68,7 @@
   <search name="QuickBooks" literal="True" expected_version="27.0.4005.2702" include="" exclude="" verspec="^27" /> <!--QB 2017 R5 -->
   <search name="QuickTime" literal="False" expected_version="Deprecated, please remove." include="" exclude="" verspec="" />
   <search name="ScreenConnect Client" literal="False" expected_version="6.0.11622.6115" include="" exclude="" verspec="" />
-  <search name="Shockwave" literal="False" expected_version="12.3.1.201" include="" exclude="" verspec="" />
+  <search name="Shockwave" literal="False" expected_version="12.3.2.202" include="" exclude="" verspec="" />
   <search name="Silverlight" literal="False" expected_version="5.1.50907.0" include="" exclude="" verspec="" />
   <search name="SonicWALL Global VPN Client" literal="False" expected_version="4.9.14.0427" include="" exclude="" verspec="" />
   <search name="SonicWALL NetExtender" literal="False" expected_version="8.0.241" include="" exclude="" verspec="" />
@@ -78,7 +78,7 @@
   <search name="TeamViewer" literal="False" expected_version="11.0.90968" include="" exclude="" verspec="^11" />
   <search name="TeamViewer" literal="False" expected_version="10.0.47484" include="" exclude="" verspec="^10" />
   <search name="TeamViewer" literal="False" expected_version="Deprecated. Please update to TeamViewer 10-13." include="" exclude="" verspec="^[2-9]" />
-  <search name="VLC" literal="False" expected_version="3.0.0" include="" exclude="" verspec="" />
+  <search name="VLC" literal="False" expected_version="3.0.1" include="" exclude="" verspec="" />
  </software>
  <ms_update_software>
   <search name="office" literal="False" string="Microsoft Office 2" include="" exclude="RT" verspec="" />
@@ -119,14 +119,14 @@
   <!-- KB3204059 -->
   <!-- For OS and IE updates, only check for the monthly roll-ups, not individual patches for platforms that support them (6.1+, XP and Vista are now off of the radar) -->
   <!-- <os_update kbid="3216916" os="6.0F,6.0C,6.0S" desc="March 2017 Security Monthly Quality Rollup for Windows Vista SP2 and Windows Server 2008 SP2" vuln="MS17-022"/> -->
-  <os_update kbid="4074598" os="6.1F,6.1C,6.1S" desc="February 13th, 2018 Monthly Rollup for Windows 7 SP1 and Windows Server 2008 R2 SP1" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074593" os="6.2S" desc="February 13th, 2018 Monthly Rollup for Windows Server 2012" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074594" os="6.3F,6.3C,6.3R,6.3S" desc="February 13th, 2018 Monthly Rollup for Windows 8.1 and Windows Server 2012 R2" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074596" os="10F,10C" desc="February 13th, 2018 Rollup for Windows 10" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074591" os="10-1511F,10-1511C" desc="February 13th, 2018 Rollup for Windows 10 build 1511" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074590" os="10-1607F,10-1607C,10-1607S" desc="February 13th, 2018 Rollup for Windows 10 build 1607 and Windows Server 2016" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074592" os="10-1703F" desc="February 13th, 2018 Rollup for Windows 10 build 1703" vuln="NoLongerIdentified"/>
-  <os_update kbid="4074588" os="10-1709F" desc="February 13th, 2018 Rollup for Windows 10 build 1709" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088875 " os="6.1F,6.1C,6.1S" desc="March 13th, 2018 Monthly Rollup for Windows 7 SP1 and Windows Server 2008 R2 SP1" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088877 " os="6.2S" desc="March 13th, 2018 Monthly Rollup for Windows Server 2012" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088876 " os="6.3F,6.3C,6.3R,6.3S" desc="March 13th, 2018 Monthly Rollup for Windows 8.1 and Windows Server 2012 R2" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088786" os="10F,10C" desc="March 13th, 2018 Rollup for Windows 10" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088779" os="10-1511F,10-1511C" desc="March 13th, 2018 Rollup for Windows 10 build 1511" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088787" os="10-1607F,10-1607C,10-1607S" desc="March 13th, 2018 Rollup for Windows 10 build 1607 and Windows Server 2016" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088782" os="10-1703F" desc="March 13th, 2018 Rollup for Windows 10 build 1703" vuln="NoLongerIdentified"/>
+  <os_update kbid="4088776" os="10-1709F" desc="March 13th, 2018 Rollup for Windows 10 build 1709" vuln="NoLongerIdentified"/>
   <!-- <os_update kbid="4014329" os="6.2S,6.3F,6.3C,6.3R,6.3S,10.0F,10.0C,10-1511F,10-1511C,10-1607F,10-1607C,10-1607S" desc="Security Update for Adobe Flash Player" vuln="MS17-023,"/> -->
   <!--os="6.0F,6.0C,6.0S,6.1F,6.1C,6.1S,6.2F,6.2C,6.2S"-->
  </updates>
