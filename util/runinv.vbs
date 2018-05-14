@@ -1,4 +1,4 @@
-' Scan PC wrapprer
+' Scan PC wrapprer - Revision 0001
 
 Option Explicit
 
@@ -282,20 +282,23 @@ If (strAPIVer = "10.0") Then
     Select Case strOSBuild 
         Case 10240
             bPostOSRelease = False
-			strAPIVer = "10.0"
-			' 10240 is a special case, it is RTM therefore is not PostOSRelease so it keeps the 10.0 APIVer despite the actual build number of 1507
+                        strAPIVer = "10.0"
+' 10240 is a special case, it is RTM therefore is not PostOSRelease so it keeps the 10.0 APIVer despite the actual build number of 1507
         Case 10586        
             bPostOSRelease = True
-			strAPIVer = "10.1511"
+                        strAPIVer = "10.1511"
         Case 14393
             bPostOSRelease = True
-			strAPIVer = "10.1607"
+                        strAPIVer = "10.1607"
         Case 15063
             bPostOSRelease = True
                         strAPIVer = "10.1703"
         Case 16299
             bPostOSRelease = True
                         strAPIVer = "10.1709"
+        Case 17134
+            bPostOSRelease = True
+                        strAPIVer = "10.1803"
     End Select
 End If
 
