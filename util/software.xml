@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <check>
- <listver>20180717-1443</listver>
+ <listver>20180720-1448</listver>
  <software>
   <!--
   <search name="String" literal="Bool" expected_version="String" include="regex" exclude="regex" verspec="regex"/>
@@ -39,6 +39,8 @@
   <search name="Dell OpenManage" literal="False" expected_version="8.5.0" include="" exclude="Essential" />
   <search name="Dell OpenManage" literal="False" expected_version="2.3.0" include="Essential" exclude="" verspec="" />
   <search name="eDrawings" literal="False" expected_version="18.00.5043" include="" exclude="" verspec="" />
+  <search name="FileZilla" literal="False" expected_version="3.34.0" include="Client" exclude="Server" verspec="" />
+  <search name="FileZilla" literal="False" expected_version="beta 0.9.60" include="Server" exclude="Client" verspec="" />
   <search name="FortiClient" literal="False" expected_version="6.0.0" include="" exclude="" verspec="" />
   <search name="GIMP" literal="False" expected_version="2.10.4" include="" exclude="" verspec="" />
   <!-- Consumer versions of Chrome use Google Update version number...
@@ -52,7 +54,7 @@
   <search name="IrfanView" literal="False" expected_version="4.51" include="" exclude="" verspec="" />
   <search name="Java" literal="False" expected_version="8.0.1710.11" include="" exclude="Auto" verspec="^8" />
   <search name="Java" literal="False" expected_version="Deprecated. Please upgrade to Java 10.x." include="" exclude="Auto" verspec="^9" />
-  <search name="Java" literal="False" expected_version="10.0.1" include="" exclude="Auto" verspec="^10" />
+  <search name="Java" literal="False" expected_version="10.0.2" include="" exclude="Auto" verspec="^10" />
   <search name="K-Lite" literal="False" expected_version="14.3.2" include="" exclude="" verspec="" />
   <search name="LabTech" literal="False" expected_version="11.0.441" include="Remote" exclude="" verspec="" />
   <search name="LabTech Software Control Center" literal="False" expected_version="11.0.441" include="" exclude="" verspec="" />
@@ -61,7 +63,7 @@
   <search name="Malwarebytes" literal="False" expected_version="3.5.1.2522" include="" exclude="" verspec="" />
   <search name="Mozilla Firefox" literal="False" expected_version="61.0.1" include="" exclude="" verspec="" />
   <search name="Mozilla Thunderbird" literal="False" expected_version="52.9.1" include="" exclude="" verspec="" />
-  <search name="Notepad++" literal="False" expected_version="7.5.6" include="" exclude="" verspec="" />
+  <search name="Notepad++" literal="False" expected_version="7.5.7" include="" exclude="" verspec="" />
   <search name="OpenOffice" literal="False" expected_version="4.1.5" include="" exclude="" verspec="" />
   <search name="paint.net" literal="False" expected_version="4.0.21" include="" exclude="" verspec="" />
   <search name="QuickBooks" literal="True" expected_version="Deprecated. Please upgrade to Quickbooks 2018." include="" exclude="" verspec="^2{1,2,3,4}" />
