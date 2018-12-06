@@ -1,4 +1,4 @@
-' Inventory.vbs - Revison 0011
+' Inventory.vbs - Revison 0001
 
 Option Explicit
 
@@ -44,7 +44,7 @@ End Function
 ' Specify the minimum number of days since the password was last set for
 ' the computer account to be considered inactive (intDays) and orphaned (intODays)
 intDays = 90
-intODays = 180
+intODays = 1095
 
 ' We'll be doing work on the filesystem and we'll need a shell
 Set objFSO = CreateObject("Scripting.FileSystemObject")
