@@ -302,6 +302,9 @@ If (strAPIVer = "10.0") Then
         Case 17763
             bPostOSRelease = True
                         strAPIVer = "10.1809"
+        Case 18362
+            bPostOSRelease = True
+                        strAPIVer = "10.1903"
     End Select
 End If
 
