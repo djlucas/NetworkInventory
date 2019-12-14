@@ -1,2 +1,0 @@
-Get my copy of sydi-server from:
-https://github.com/djlucas/sydi-server
