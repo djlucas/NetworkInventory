@@ -135,7 +135,7 @@ strHtmlReport = strFullPath & "\..\Reports\" & strTarget & ".html"
 'End DEBUG
 strUpdateReport = strFullPath & "\..\Reports\NeedsUpdate.txt"
 strStylesheet = strFullPath & "\..\util\serverhtml.xsl"
-strLogo = "BladeLogo.png"
+strLogo = "LOGO.jpg"
 strCl = strFullPath & "\..\Server2.4\sydi-server.vbs -t" & strTarget & " -ex -o" & chr(34) & strReport & chr(34) & " -sh"
 strClH = strFullPath & "\..\Server2.4\tools\sydi-transform.vbs -x" & chr(34) & strReport & chr(34) & " -s" &strStylesheet & " -o" & strHtmlReport
 objShell.Run "cscript.exe " & strCl, 0, vbTrue
