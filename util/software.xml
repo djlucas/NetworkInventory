@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <check>
- <listver>20200609-2245</listver>
+ <listver>20200609-2254</listver>
  <software>
   <!--
   <search name="String" literal="Bool" expected_version="String" include="regex" exclude="regex" verspec="regex"/>
@@ -19,7 +19,7 @@
   <search name="Adobe Acrobat Reader" literal="False" expected_version="Please use Acrobat Reader DC for client installs" include="201" exclude="" verspec="" Security="True" />
   <search name="Adobe Reader" literal="False" expected_version="Deprecated. Please replace with Acrobat Reader DC." include="" exclude="" verspec="" Security="True" />
   <search name="Adobe Acrobat Reader DC" literal="False" expected_version="20.009.20067" include="" exclude="" verspec="" Security="True" />
-  <search name="Adobe Acrobat" literal="False" expected_version="Deprecated. Please upgrade to Acrobat DC." include="" exclude="" verspec="^([2-9]|10|11)" Security="True" />
+  <search name="Adobe Acrobat" literal="False" expected_version="Deprecated. Please upgrade to Acrobat DC." include="" exclude="Reader" verspec="^([2-9]|10|11)" Security="True" />
   <search name="Adobe AIR" literal="False" expected_version="32.0.0.125" include="" exclude="" verspec="" Security="False" />
   <!-- Occasionally Version strings differ across the different Flash targets, most times not -->
   <search name="Adobe Flash Player" literal="False" expected_version="32.0.0.371" include="" exclude="" verspec="" Security="True" />
