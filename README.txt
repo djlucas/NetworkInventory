@@ -31,7 +31,8 @@ Reports: Obvious!
 ===
 
 Server2.4:  If this looks familiar, it is. Unfortunatly, it has been modified a lot (see the changelog in the Server2.4 folder).
-Patches have been sent to the Sydi author, but I expect it'll be a while before they are even considered.
+Patches have been sent to the Sydi author, but I expect it'll be a while before they are even considered because I did not
+deal with the Office templates.
 
 For now, this has been removed and replaced with an empty directory. You need to
 use the branch from my github available at:
