@@ -21,7 +21,7 @@ is set by GPO, you'll need to do the following:
 Manual Run:
 If a computer was offline, or otherwise unavailble (unplugged, bad switch, wireless down, whatever), or if you want to run
 only on one PC, you can manually generate a report, or append to one by running the following command:
-    cscript util\runinv.vbs [computername]
+    'cscript util\runinv.vbs [computername]' (or run the script from that computer)
 Coputer name is optional, if omitted, it will use the hostname of the machine it is run from.
 
 ===
