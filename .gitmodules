@@ -1,3 +1,0 @@
-[submodule "sydi-server"]
-	path = Server-2.4
-	url = https://github.com/djlucas/sydi-server.git
