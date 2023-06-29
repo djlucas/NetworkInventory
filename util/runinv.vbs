@@ -62,11 +62,11 @@ On Error Resume Next
 Set objWMISvc = GetObject("winmgmts:\\.\root\cimv2")
 Set colComputers = objWMISvc.ExecQuery("Select * from Win32_ComputerSystem")
 For Each objCname in colComputers
-    Select Case objCname.DomainRole 
+    Select Case objCname.DomainRole
         Case 0
             ' Standlaone Workstation
             bIsDomainMember = False
-        Case 1        
+        Case 1
             ' Member Workstation
             bIsDomainMember = True
         Case 2
@@ -279,12 +279,12 @@ End If
 
 ' Determine Windows 10/Server 2016 update build
 If (strAPIVer = "10.0") Then
-    Select Case strOSBuild 
+    Select Case strOSBuild
         Case 10240
             bPostOSRelease = False
                         strAPIVer = "10.0"
 ' 10240 is a special case, it is RTM therefore is not PostOSRelease so it keeps the 10.0 APIVer despite the actual build number of 1507
-        Case 10586        
+        Case 10586
             bPostOSRelease = True
                         strAPIVer = "10.1511"
         Case 14393
@@ -311,6 +311,27 @@ If (strAPIVer = "10.0") Then
         Case 19041
             bPostOSRelease = True
                         strAPIVer = "10.2004"
+        Case 19042
+            bPostOSRelease = True
+                        strAPIVer = "10.20H2"
+        Case 19043
+            bPostOSRelease = True
+                        strAPIVer = "10.21H1"
+        Case 19044
+            bPostOSRelease = True
+                        strAPIVer = "10.21H2"
+        Case 19045
+            bPostOSRelease = True
+                        strAPIVer = "10.22H2"
+        Case 20348
+            bPostOSRelease = False
+                        strAPIVer = "2022"
+        Case 22000
+            bPostOSRelease = False
+                        strAPIVer = "11.0"
+        Case 22621
+            bPostOSRelease = True
+                        strAPIVer = "11.21H2"
     End Select
 End If
 
@@ -331,7 +352,7 @@ For Each objNode in colNodesOSPatch
     bTestOS = objRegExp.Test(objNode.Attributes.getNamedItem("os").Text)
 	If (bTestOS) Then
 	    'OS Matches (Presumably, we still haven't dealt with R and C modifiers)
-		
+
 		'RT should be in product name (caption)
         For Each objNodeVals in colNodesPatches
 		    If (objNode.Attributes.getNamedItem("kbid").Text = objNodeVals.Attributes.getNamedItem("hotfixid").Text) Then

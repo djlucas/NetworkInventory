@@ -239,7 +239,7 @@ for each strTarget in arrayTarget
         objFSO.DeleteFile(strDocDir &"\" & strTarget &".html")
     End If
     Wscript.Echo "Running inventory on " &strTarget &"."
-    set WshDoInventory = CreateObject("WScript.Shell") 
+    set WshDoInventory = CreateObject("WScript.Shell")
     WshDoInventory.Run "cscript.exe " & strFullPath & "\util\runinv.vbs " & strTarget, 0, vbFalse
 Next
 

@@ -21,7 +21,7 @@ is set by GPO, you'll need to do the following:
 Manual Run:
 If a computer was offline, or otherwise unavailble (unplugged, bad switch, wireless down, whatever), or if you want to run
 only on one PC, you can manually generate a report, or append to one by running the following command:
-    'cscript util\runinv.vbs [computername]' (or run the script from that computer)
+    cscript util\runinv.vbs [computername]
 Coputer name is optional, if omitted, it will use the hostname of the machine it is run from.
 
 ===
@@ -31,8 +31,7 @@ Reports: Obvious!
 ===
 
 Server2.4:  If this looks familiar, it is. Unfortunatly, it has been modified a lot (see the changelog in the Server2.4 folder).
-Patches have been sent to the Sydi author, but I expect it'll be a while before they are even considered because I did not
-deal with the Office templates.
+Patches have been sent to the Sydi author, but I expect it'll be a while before they are even considered.
 
 For now, this has been removed and replaced with an empty directory. You need to
 use the branch from my github available at:
