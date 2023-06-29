@@ -1,4 +1,0 @@
-[submodule "Server-2.4"]
-	path = Server-2.4
-	url = git@github.com:djlucas/sydi-server.git
-	branch = master
