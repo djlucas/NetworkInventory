@@ -851,18 +851,48 @@ Function GatherWMIInformation()
 		If (strOperatingSystem_Build = "17134") Then
 			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 1803"
 		End If
+        'Server 2019 and 10 1809
 		If (strOperatingSystem_Build = "17763") Then
 			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 1809"
 		End If
-                If (strOperatingSystem_Build = "18362") Then
+        If (strOperatingSystem_Build = "18362") Then
 			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 1903"
 		End If
-                If (strOperatingSystem_Build = "18363") Then
+        If (strOperatingSystem_Build = "18363") Then
 			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 1909"
 		End If
-                If (strOperatingSystem_Build = "19041") Then
+        If (strOperatingSystem_Build = "19041") Then
 			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 2004"
 		End If
+        If (strOperatingSystem_Build = "19042") Then
+			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 20H2"
+		End If
+        If (strOperatingSystem_Build = "19043") Then
+			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 21H1"
+		End If
+        If (strOperatingSystem_Build = "19044") Then
+			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 21H2"
+		End If
+        If (strOperatingSystem_Build = "19045") Then
+			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " Build 22H2"
+		End If
+        'Server 2022
+        If (strOperatingSystem_Build = "20348") Then
+            strOperatingSystem_Caption = arrOperatingSystem_Name(0)
+        End If
+        'Windows 11 RTM
+        If (strOperatingSystem_Build = "22000") Then
+			strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " RTM"
+		End If
+        If (strOperatingSystem_Build = "22621") Then
+            strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " 22H2"
+        End If
+        If (strOperatingSystem_Build = "22631") Then
+            strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " 23H2"
+        End If
+		If (strOperatingSystem_Build = "26100") Then
+            strOperatingSystem_Caption = arrOperatingSystem_Name(0) & " 24H2"
+        End If
 	End If
 	
 	If (bWMIServerFeatures And bIsServer And strOperatingSystemLevel > 52) Then
