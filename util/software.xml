@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <check>
- <listver>20230425-1407</listver>
+ <listver>20241016-1939</listver>
  <software>
   <!--
   <search name="String" literal="Bool" expected_version="String" include="regex" exclude="regex" verspec="regex"/>
@@ -11,107 +11,100 @@
 		Security: "bool" denotes whether latest version includes patch for a released CVE (not currently used)
   -->
 
-  <search name="7-Zip" literal="False" expected_version="23.01" include="" exclude="" verspec="" Security="False" />
+  <search name="7-Zip" literal="False" expected_version="24.08" include="" exclude="" verspec="" Security="False" />
 
-  <search name="Adobe Acrobat 2015" literal="False" expected_version="15.006.30527" include="" exclude="" verspec="" Security="True" />
-  <search name="Adobe Acrobat 2017" literal="False" expected_version="17.011.30180" include="" exclude="" verspec="" Security="True" />
+  <search name="Adobe Acrobat 2015" literal="False" expected_version="Deprecated. Please replace with Adobe Acrobat 2020 Perpetual License." include="" exclude="" verspec="" Security="True" />
+  <search name="Adobe Acrobat 2017" literal="False" expected_version="Deprecated. Please replace with Adobe Acrobat 2020 Perpetual License." include="" exclude="" verspec="" Security="True" />
   <search name="Adobe Acrobat 2020" literal="False" expected_version="20.001.30010" include="" exclude="" verspec="" Security="True" />
-  <search name="Adobe Acrobat" literal="False" expected_version="23.003.20215" include="" exclude="" verspec="^2[1,2]" Security="True" /><!--MacOS 23.003.20215-->
+  <search name="Adobe Acrobat" literal="False" expected_version="24.003.20112" include="" exclude="Language" verspec="^2[1,2]" Security="True" /><!--macOS 24.003.20112-->
   <!-- Only use DC for reader unless there is a special requirement for XI -->
   <!-- <search name="Adobe Acrobat Reader" literal="False" expected_version="Please use Adobe Acrobat Reader DC for client installs" include="201" exclude="DC" verspec="" Security="True" />-->
   <search name="Adobe Reader" literal="False" expected_version="Deprecated. Please replace with Adobe Acrobat Reader." include="" exclude="" verspec="" Security="True" />
-  <search name="Adobe Acrobat Reader" literal="False" expected_version="23.003.20215" include="" exclude="" verspec="" Security="True" /><!--MacOS 23.003.20215-->
+  <search name="Adobe Acrobat Reader" literal="False" expected_version="24.003.20112" include="" exclude="Language" verspec="" Security="True" /><!--macOS 24.003.20112-->
   <!--<search name="Adobe Acrobat" literal="False" expected_version="Deprecated. Please upgrade to Acrobat DC." include="" exclude="Reader" verspec="^([3-9][0,2-9]|10|11)" Security="True" />-->
   <search name="Adobe AIR" literal="False" expected_version="Deprecated. Please switch to the Harman Air SDK or remove." include="" exclude="" verspec="" Security="False" />
   <search name="Adobe Flash Player" literal="False" expected_version="Deprecated. Please remove before EOL 2020-12-31." include="" exclude="" verspec="" Security="True" />
 
-  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 8.0.372.7" include="" exclude="Auto" verspec="^8" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 8.0.422.5" include="" exclude="Auto" verspec="^8" Security="True" /><!--macOS 8.0.422.5.1-->
   <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v11." include="" exclude="Auto" verspec="^9" Security="True" />
   <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipes Temurin v11." include="" exclude="Auto" verspec="^10" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 11.0.19.7" include="" exclude="Auto" verspec="^11" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^12" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^13" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^14" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^15" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^16" Security="True" />
-  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 17.0.7.7" include="" exclude="Auto" verspec="^17" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="8.0.372.7" include="" exclude="Auto" verspec="^8" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="11.0.19.7" include="" exclude="Auto" verspec="^11" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="17.0.7.7" include="" exclude="Auto" verspec="^17" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^18" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v20 if you need the most recent JDK." include="" exclude="Auto" verspec="^19" Security="True" />
-  <search name="Eclipse Temurin" literal="False" expected_version="20.0.1.9" include="" exclude="Auto" verspec="^20" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 11.0.24.8" include="" exclude="Auto" verspec="^11" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^12" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^13" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^14" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^15" Security="True" />																																	
+  <search name="AdoptOpenJDK" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^16" Security="True" />
+  <search name="AdoptOpenJDK" literal="False" expected_version="Eclipse Temurin 17.0.12.7" include="" exclude="Auto" verspec="^17" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="8.0.422.5" include="" exclude="Auto" verspec="^8" Security="True" /><!--macOS 8.0.422.5.1-->
+  <search name="Eclipse Temurin" literal="False" expected_version="11.0.24.8" include="" exclude="Auto" verspec="^11" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="17.0.12.7" include="" exclude="Auto" verspec="^17" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^18" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^19" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="Deprecated. Please update to Eclipse Temurin v21 if you need the most recent JDK." include="" exclude="Auto" verspec="^20" Security="True" />
+  <search name="Eclipse Temurin" literal="False" expected_version="21.0.4.7" include="" exclude="Auto" verspec="^21" Security="True" />
 
   <search name="CCleaner" literal="False" expected_version="Please Remove, CCleaner is no longer free for Enterprise use." include="" exclude="" verspec="" Security="False" />
 
   <search name="CDBurnerXP" literal="False" expected_version="4.5.8.7128" include="" exclude="" verspec="" Security="False" />
 
-  <!-- Catch all CCCP (no version number) as it should be removed due to it being hopelessly out of date -->
   <search name="Combined Community Codec Pack" literal="False" expected_version="Deprecated. Please replace with K-Lite Codec Pack." include="" exclude="" verspec="" Security="True" />
 
   <search name="Citrix Receiver" literal="True" expected_version="Deprecated. Please replace with Citrix Workspace App." include="" exclude="" verspec="" Security="False" />
-  <search name="Citrix Workspace App" literal="True" expected_version="23.2.0.38" include="" exclude="" verspec="" Security="False" /> <!-- MAC: 22.08.1.43 -->
+  <search name="Citrix Workspace App" literal="True" expected_version="24.5.0.131" include="" exclude="" verspec="" Security="False" /> <!-- macOS: 24.05.0.89 -->
 
-  <search name="ConnectWise Automate" literal="False" expected_version="22.0.394" include="Remote" exclude="" verspec="" Security="False" />
+  <search name="ConnectWise Automate" literal="False" expected_version="23.0.392" include="Remote" exclude="" verspec="" Security="False" />
   <search name="ConnectWise Automate" literal="False" expected_version="22.0.166" include="Control" exclude="" verspec="" Security="False" />
 
   <search name="CutePDF Writer" literal="False" expected_version="4.0" include="" exclude="" verspec="" Security="False" />
 
-  <search name="Dell EMC OpenManage" literal="False" expected_version="10.3.0.0" include="" exclude="" verspec="" Security="False" />
-  <search name="Dell OpenManage" literal="False" expected_version="8.5.0 - Please update to Dell EMC OpenMange 10.3.0.0 if applicable to your system" include="64-Bit" exclude="Essential" Security="False" />
+  <search name="Dell EMC OpenManage" literal="False" expected_version="10.3.0.0 - Deprecated, please remove and use OpenManage Enterprise if iDRAC is insufficient" include="" exclude="" verspec="" Security="False" />
+  <search name="Dell OpenManage" literal="False" expected_version="8.5.0 - Deprecated, please remove and use OpenManage Enterprise if iDRAC is insufficient" include="64-Bit" exclude="Essential" Security="False" />
   <search name="Dell OpenManage" literal="False" expected_version="8.5.0" include="" exclude="Essential" Security="False" />
   <search name="Dell OpenManage" literal="False" expected_version="2.5.0" include="Essential" exclude="" verspec="" Security="False" />
 
-<!--
-  <search name="eDrawings" literal="False" expected_version="17.2.0029" include="2017" exclude="" verspec="" Security="False" />
-  <search name="eDrawings" literal="False" expected_version="18.40.0036" include="2018" exclude="" verspec="" Security="False" />
-  <search name="eDrawings" literal="False" expected_version="27.30.0056" include="2019" exclude="" verspec="" Security="False" />
-  <search name="eDrawings" literal="False" expected_version="29.40.0037" include="" exclude="" verspec="" Security="False" />
-  <search name="eDrawings" literal="False" expected_version="30.40.0011" include="" exclude="SOLIDWORKS" verspec="" Security="False" />
--->
   <!-- If it ships with SolidWorks, then exclude it as it cannot be updated -->
-  <search name="eDrawings" literal="False" expected_version="31.20.0035" include="" exclude="SOLIDWORKS" verspec="" Security="False" />
+  <search name="eDrawings" literal="False" expected_version="32.30.0020" include="" exclude="SOLIDWORKS" verspec="" Security="False" />
 
-  <search name="FileZilla Client" literal="False" expected_version="3.64.0" include="" exclude="" verspec="" Security="False" />
+  <search name="FileZilla Client" literal="False" expected_version="3.67.1" include="" exclude="" verspec="" Security="False" />
 
-  <search name="FileZilla Server" literal="False" expected_version="1.7.2" include="" exclude="" verspec="" Security="False" />
+  <search name="FileZilla Server" literal="False" expected_version="1.9.1" include="" exclude="" verspec="" Security="False" />																															
 
   <search name="FortiClient VPN" literal="False" expected_version="7.0.6.0290" include="" exclude="" verspec="" Security="False" />
 
-  <search name="GIMP" literal="False" expected_version="2.10.34" include="" exclude="" verspec="" Security="False" />
+  <search name="GIMP" literal="False" expected_version="2.10.38" include="" exclude="" verspec="" Security="False" />
 
   <!-- We want only the Enterprise version of Chrome so that it can be controlled via GPO, consumer verisons use the Google Update version -->
-  <search name="Google Chrome" literal="False" expected_version="114.0.5735.199" include="" exclude="" verspec="" Security="True" /> <!-- MAC: 114.0.5735.198 -->
+  <search name="Google Chrome" literal="False" expected_version="130.0.6723.59" include="" exclude="" verspec="" Security="True" /> <!-- macOS: 130.0.6723.59 -->
   <search name="Google Earth" literal="False" expected_version="Deprecated. Please upgrade to Google Earth Pro." include="" exclude="Pro" verspec="" Security="False" />
   <search name="Google Earth" literal="False" expected_version="7.3.6" include="Pro" exclude="" verspec="" Security="False" />
 
-  <search name="GPL Ghostscript" literal="False" expected_version="10.01.2" include="" exclude="" verspec="" Security="True" />
+  <search name="GPL Ghostscript" literal="False" expected_version="10.04.0" include="" exclude="" verspec="" Security="True" />
 
-  <search name="iTunes" literal="False" expected_version="12.12.9.4" include="" exclude="" verspec="" Security="False" />
+  <search name="iTunes" literal="False" expected_version="12.13.3.2" include="" exclude="" verspec="" Security="False" />
   <search name="iCloud" literal="False" expected_version="7.21.0.23" include="" exclude="" verspec="" Security="False" />
   <search name="QuickTime" literal="False" expected_version="Deprecated, please remove." include="" exclude="" verspec="" Security="False" />
 
-  <search name="IrfanView" literal="False" expected_version="4.62" include="" exclude="" verspec="" Security="False" />
+  <search name="IrfanView" literal="False" expected_version="4.70" include="" exclude="" verspec="" Security="False" />
 
-  <search name="Java" literal="False" expected_version="Deprecated. Please upgrade to AdoptOpenJDK." include="" exclude="Auto" verspec="" Security="True" />
+  <search name="Java" literal="False" expected_version="Deprecated. Please upgrade to Eclipse Temurin." include="" exclude="Auto" verspec="" Security="True" />
 
-  <search name="K-Lite" literal="False" expected_version="17.6.6" include="" exclude="" verspec="" Security="False" />
+  <search name="K-Lite" literal="False" expected_version="18.6.2" include="" exclude="" verspec="" Security="False" />
 
-<!-- Fresh -->
-  <search name="LibreOffice" literal="False" expected_version="7.5.4" include="" exclude="" verspec="" Security="False" />
-<!-- Still <search name="LibreOffice" literal="False" expected_version="7.4.7" include="" exclude="" verspec="" Security="False" /> -->
+  <search name="LibreOffice" literal="False" expected_version="24.8.2" include="" exclude="" verspec="" Security="False" />
 
   <search name="Malwarebytes" literal="False" expected_version="4.5.32.343" include="" exclude="" verspec="" Security="False" />
 
-  <search name="Mozilla Firefox" literal="False" expected_version="102.12.0" include="ESR" exclude="" verspec="" Security="True" />
-  <search name="Mozilla Firefox" literal="False" expected_version="114.0.2" include="" exclude="ESR" verspec="" Security="True" />
-  <search name="Thunderbird" literal="False" expected_version="102.12.0" include="" exclude="" verspec="" Security="True" />
+  <search name="Microsoft Office" literal="False" expected_version="Deprecated, please update to Office 365 or Office 2021." include="" exclude="" verspec="^16" Security="False" />
+  
+  <search name="Mozilla Firefox" literal="False" expected_version="128.3.1" include="ESR" exclude="" verspec="" Security="True" />
+  <search name="Mozilla Firefox" literal="False" expected_version="131.0.3" include="" exclude="ESR" verspec="" Security="True" />
+  <search name="Thunderbird" literal="False" expected_version="128.3.1" include="" exclude="" verspec="" Security="True" />
 
-  <search name="Notepad++" literal="False" expected_version="8.5.4" include="" exclude="" verspec="" Security="False" />
+  <search name="Notepad++" literal="False" expected_version="8.7" include="" exclude="" verspec="" Security="False" />
 
-  <search name="OpenOffice" literal="False" expected_version="4.1.14" include="" exclude="" verspec="" Security="False" />
+  <search name="OpenOffice" literal="False" expected_version="4.1.15" include="" exclude="" verspec="" Security="False" />
 
-  <search name="paint.net" literal="False" expected_version="5.0.7" include="" exclude="" verspec="" Security="False" />
+  <search name="paint.net" literal="False" expected_version="5.0.13" include="" exclude="" verspec="" Security="False" />
 
   <search name="QuickBooks" literal="True" expected_version="Deprecated. Please upgrade to Quickbooks 2022." include="" exclude="" verspec="^(1|2[1-9])" Security="False" />
   <search name="QuickBooks" literal="True" expected_version="30.0.4015" include="" exclude="" verspec="^30" Security="False" /> <!--OB 2020 R15 -->
@@ -136,11 +129,10 @@
   <search name="TeamViewer" literal="False" expected_version="Deprecated. Please update to TeamViewer 11-14." include="" exclude="" verspec="^10" Security="False" />
   <search name="TeamViewer" literal="False" expected_version="Deprecated. Please update to TeamViewer 11-14." include="" exclude="" verspec="^[2-9]" Security="True" />
 
-  <search name="VLC" literal="False" expected_version="3.0.18" include="" exclude="" verspec="" Security="False" />
+  <search name="VLC" literal="False" expected_version="3.0.21" include="" exclude="" verspec="" Security="False" />
 
-  <search name="Zoom" literal="False" expected_version="5.15.2" include="" exclude="" verspec="" Security="False" /><!-- MacOS: 5.15.0 -->
+  <search name="Zoom" literal="False" expected_version="6.2.3" include="" exclude="" verspec="" Security="False" /><!-- MacOS: 6.2.3 -->																													   
  </software>
-
  <ms_update_software>
   <search name="office" literal="False" string="Microsoft Office 2" include="" exclude="RT" verspec="" />
   <search name="officert" literal="False" string="Microsoft Office 2" include="RT" exclude="" verspec="" />
@@ -179,30 +171,32 @@
          SharePoint Foundation, VB Runtime, Windows Media Center, Internet Explorer, Edge -->
   <!-- KB3204059 -->
   <!-- For OS and IE updates, only check for the monthly roll-ups, not individual patches for platforms that support them (6.1+, XP and Vista are now off of the radar with special releases for 2008) -->
-  <os_update kbid="5027279" os="6.0C,6.0S" desc="END OF SERVICE 2020-01-14 - ESU ONLY - June 13, 2023 Monthly Rollup for Windows Server 2008 SP2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5034173xx" os="6.0C,6.0S" desc="END OF SERVICE 2020-01-14 - ESU ONLY - January 9, 2024 Monthly Rollup for Windows Server 2008 SP2" vuln="NoLongerIdentified"/>
   <os_update kbid="5022872xx" os="6.1F" desc="END OF SERVICE 2020-01-14 - Please update to Windows 10" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027275" os="6.1C,6.1S" desc="END OF SERVRICE 2020-07-14 - ESU ONLY - June 13, 2023 Monthly Rollup for Windows Server 2008 R2 SP1" vuln="NoLongerIdentified"/>
+  <os_update kbid="5034169xx" os="6.1C,6.1S" desc="END OF SERVRICE 2020-07-14 - ESU ONLY - January 9, 2024 Monthly Rollup for Windows Server 2008 R2 SP1" vuln="NoLongerIdentified"/>
   <os_update kbid="5022903xx" os="6.2F,6.2R" desc="END OF SERVICE 2018-01-09 - Please update to Windows 10" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027283" os="6.2C,6.2S" desc="END OF SERVICE 2020-07-14 - ESU ONLY - June 13, 2023 Monthly Rollup for Windows Server 2012" vuln="NoLongerIdentified"/>
-  <os_update kbid="5022352xx" os="6.3F,6.3R" desc="END OF SERVICE 2021-01-14 - Please update to Windows 10" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027271" os="6.3C,6.3S" desc="END OF SERVICE 2021-01-14 - ESU ONLY - June 13, 2023 Monthly Rollup for Windows Server 2012 R2" vuln="NoLongerIdentified"/>
-  <os_update kbid="5028622" os="10F,10C" desc="June 23, 2023 Rollup for Windows 10 Version 1507" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044342" os="6.2C,6.2S" desc="END OF SERVICE 2020-07-14 - ESU ONLY - October 8, 2024 Monthly Rollup for Windows Server 2012" vuln="NoLongerIdentified"/>
+  <os_update kbid="5041828xx" os="6.3F,6.3R" desc="END OF SERVICE 2021-01-14 - Please update to Windows 10" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044343" os="6.3C,6.3S" desc="END OF SERVICE 2021-01-14 - ESU ONLY - October 8, 2024 Monthly Rollup for Windows Server 2012 R2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044286" os="10F,10C" desc="September 10, 2024 Rollup for Windows 10 Version 1507" vuln="NoLongerIdentified"/>
   <os_update kbid="4093109xx" os="10-1511F,10-1511C" desc="END OF SERVICE 2018-04-10 - Please update to Windows 10 1607 or 21H2 (or later)." vuln="NoLongerIdentified"/>
-  <os_update kbid="5028623" os="10-1607F,10-1607C,10-1607N,10-1607S" desc="June 23, 2023 Rollup for Windows 10 Version 1607 and Windows Server 2016" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044293" os="10-1607F,10-1607C,10-1607N,10-1607S" desc="October 8, 2024 Rollup for Windows 10 Version 1607 and Windows Server 2016" vuln="NoLongerIdentified"/>
   <os_update kbid="4592473xx" os="10-1703F,10-1703C,10-1703N" desc="END OF STANDARD SUPPORT 2018-10-08 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
   <os_update kbid="4580328xx" os="10-1709F,10-1709C,10-1709N" desc="END OF STANDARD SUPPORT 2018-10-08 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
   <os_update kbid="5003174xx" os="10-1803F,10-1803C,10-1803N" desc="END OF STANDARD SUPPORT 2021-05-11 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
-  <os_update kbid="5027222" os="10-1809F,10-1809C,10-1809N,10-1809S" desc="June 23, 2023 Rollup for Windows 10 Version 1809, Windows Server Version 1809, and Windows Server 2019" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044277" os="10-1809F,10-1809C,10-1809N,10-1809S" desc="October 8, 2024 Rollup for Windows 10 Version 1809, Windows Server Version 1809, and Windows Server 2019" vuln="NoLongerIdentified"/>
   <os_update kbid="4592449xx" os="10-1903F,10-1903C,10-1903N,10-1903S" desc="END OF STANDARD SUPPORT 2020-10-08 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
   <os_update kbid="5013945xx" os="10-1909F,10-1909C,10-1909N,10-1909S" desc="END OF STANDARD SUPPORT 2022-05-10 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
   <os_update kbid="5008212xx" os="10-2004F,10-2004C,10-2004N,10-2004S" desc="END OF STANDARD SUPPORT 2021-12-14 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
-  <os_update kbid="5027215" os="10-20H2F,10-20H2C,10-20H2N,10-20H2S" desc="June 13, 2023 Rollup for Windows 10 Version 20H2 and Windows Server 2019 Version 20H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5021233xx" os="10-20H2F,10-20H2C,10-20H2N,10-20H2S" desc="END OF STANDARD SUPPORT 2023-05-09 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
   <os_update kbid="5021233xx" os="10-21H1F,10-21H1C,10-21H1N,10-21H1S" desc="END OF STANDARD SUPPORT 2022-12-13 - Please update to Windows 10 21H2 (or later)." vuln="NoLongerIdentified"/>
-  <os_update kbid="5027215" os="10-21H2F,10-21H2C,10-21H2N,10-21H2S" desc="June 13, 2023 Rollup for Windows 10 Version 21H2 and Windows Server 2019 Version 21H2" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027215" os="10-22H2F,10-22H2C,10-22H2N,10-22H2S" desc="June 13, 2023 Rollup for Windows 10 Version 22H2 and Windows Server 2019 Version 22H2" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027223" os="11.0F,11.0N" desc="June 13, 2023 Rollup for Windows 11 Version 21H2" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027231" os="11.22H2F,11.22H2N" desc="June 13, 2023 Rollup for Windows 11 Version 22H2" vuln="NoLongerIdentified"/>
-  <os_update kbid="5027225" os="2022S,2022C" desc="June 13, 2023 Rollup for Windows Server 2022" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044273" os="10-21H2F,10-21H2C,10-21H2N,10-21H2S" desc="October 8, 2024 Rollup for Windows 10 Version 21H2 and Windows Server 2019 Version 21H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044273" os="10-22H2F,10-22H2C,10-22H2N,10-22H2S" desc="October 8, 2024 Rollup for Windows 10 Version 22H2 and Windows Server 2019 Version 22H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044280" os="11.0F,11.0N" desc="October 8, 2024 Rollup for Windows 11 Version 21H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044285" os="11.22H2F,11.22H2N" desc="October 8, 2024 Rollup for Windows 11 Version 22H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044285" os="11.23H2F,11.23H2N" desc="October 8, 2024 Rollup for Windows 11 Version 23H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044285" os="11.24H2F,11.24H2N" desc="October 8, 2024 Rollup for Windows 11 Version 24H2" vuln="NoLongerIdentified"/>
+  <os_update kbid="5044281" os="2022S,2022C" desc="October 8, 2024 Rollup for Windows Server 2022" vuln="NoLongerIdentified"/>
   <!-- <os_update kbid="4014329" os="6.2S,6.3F,6.3C,6.3R,6.3S,10.0F,10.0C,10-1511F,10-1607C,10-1607F,10-1607C,10-1607S" desc="Security Update for Adobe Flash Player" vuln="MS17-023,"/> -->
   <!--os="6.0F,6.0C,6.0S,6.1F,6.1C,6.1S,6.2F,6.2C,6.2S"-->
  </updates>
